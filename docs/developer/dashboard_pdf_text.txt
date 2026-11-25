@@ -1,0 +1,57 @@
+PASS | CISO Executive Dashboard
+PakArena Smart Stadium | Documentary baseline and measured prototype results | 2026-11-23
+Independent audit 44.46/100 - Insufficient assurance under the audit scale. F-04 requires priority safety review. Overall operational assurance
+remains incomplete.
+Governance maturity (doc.)
+2.2 / 5
+Mean inherent risk
+14.31 / 25
+High / Critical risks
+15
+External audit findings
+13
+Control effectiveness
+Not yet assessed
+Controls tested
+0/15
+Framework compliance
+0.0%
+Critical control gaps
+0
+IAM documentary maturity
+3.0 / 5
+BC/DR tested readiness
+Not yet assessed
+IR documentary maturity
+3.0 / 5
+AI governance readiness
+4.0 / 10
+AI Trust / reviewed accuracy
+Not yet assessed
+AI automation gain
+Not yet assessed
+Correct / incorrect / reviewed
+0 / 0 / 0
+Open corrective actions
+13
+Maturity scores are documentary self-assessments awaiting reviewer sign-off. Control effectiveness is effective/applicable controls; zero tests
+displays Not yet assessed. Controls tested shows coverage. Compliance scope is the nine A2 framework areas.
+Top five inherent risks
+R10 | 20/25 | Privileged employee account is compromised
+R11 | 20/25 | Ransomware interrupts stadium operations
+R12 | 20/25 | Personal information is stolen
+R01 | 16/25 | DDoS makes ticket sales unavailable
+R04 | 15/25 | Public/guest network access reaches internal systems
+Top five decisions and actions
+F-04 | Validate dependency-aware recovery, isolated fallback ticket checks and local CCTV/BMS operation with Operations and Physical
+Security; conduct a controlled exercise.
+F-01 | Collect dated MFA, access-review, vendor, restore and SIEM artifacts for the five highest-risk controls, then extend to all controls.
+F-02 | Test all 15 High/Critical risks, with a dedicated restore test and explicit reasons for phased work.
+F-03 | Link residual L/I to control test results and record an authorized accept-or-treat decision and review date.
+F-06 | Review obligations with Privacy and Compliance; approve retention and breach procedures; maintain source-backed requirement
+mappings.
+AI automation - risk and control mapping
+Paired end-to-end manual time Not yet assessed | Assisted time Not yet assessed | Verified paired cases 0. Human approval is required.
+Gain = (manual - assisted) / manual x 100. Trust = correct / reviewed verdicts x 100. Prototype benchmark and catalog execution times are
+distinct from human workflow measurements.
+Sources A1-A4 and current registers. Relative deadlines start at an approved project start. Source audit date conflicts remain flagged.

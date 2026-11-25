@@ -1,0 +1,1241 @@
+{
+  "audit_findings": [
+    {
+      "id": "EXT-F-01",
+      "requirement": "Control evidence and operating tests missing",
+      "finding": "All 15 controls have evidence requests but no dated operating artifacts or tested effectiveness.",
+      "severity": "High",
+      "recommendation": "Collect dated MFA, access-review, vendor, restore and SIEM artifacts for the five highest-risk controls, then extend to all controls.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-02",
+      "requirement": "Audit coverage excludes material risks",
+      "finding": "The plan omits spectator data breach, DDoS, replayed tickets, POS malware and IoT integrity; backup coverage is partial.",
+      "severity": "High",
+      "recommendation": "Test all 15 High/Critical risks, with a dedicated restore test and explicit reasons for phased work.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-03",
+      "requirement": "Residual risk lacks evidence and acceptance",
+      "finding": "Residual figures are planning estimates without residual likelihood/impact, owners, dates or acceptance for seven High residual risks.",
+      "severity": "High",
+      "recommendation": "Link residual L/I to control test results and record an authorized accept-or-treat decision and review date.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-04",
+      "requirement": "Recovery dependency and event safety weaknesses",
+      "finding": "Gates target 15 minutes while dependencies target 30; backup intervals, missing targets and CCTV/BMS safe operation are unresolved.",
+      "severity": "High",
+      "recommendation": "Validate dependency-aware recovery, isolated fallback ticket checks and local CCTV/BMS operation with Operations and Physical Security; conduct a controlled exercise.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-05",
+      "requirement": "Policy ownership and approval incomplete",
+      "finding": "No consolidated approved and versioned policy set, exceptions process or AI-use policy is evidenced.",
+      "severity": "Medium",
+      "recommendation": "Adopt the proposed policy lifecycle with owners, approvers, review cycles, change control and exception records.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-06",
+      "requirement": "Compliance applicability and privacy duties incomplete",
+      "finding": "Payment, personal data, CCTV, retention, deletion, breach notification and PISF applicability lack documented analysis.",
+      "severity": "High",
+      "recommendation": "Review obligations with Privacy and Compliance; approve retention and breach procedures; maintain source-backed requirement mappings.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-07",
+      "requirement": "Business objectives and risk appetite incomplete",
+      "finding": "The register lacks measurable objectives, approved appetite, complete risk ownership, evidence-based likelihood and due dates.",
+      "severity": "Medium",
+      "recommendation": "Review the proposed measurable objectives, risk escalation and acceptance procedure; assign risk owners and record scoring assumptions.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-08",
+      "requirement": "Threat coverage misses people, AI and emergency failure",
+      "finding": "Mobile, public Wi-Fi, insiders, temporary staff, AI privacy/bias and non-malicious gate/power failure need explicit treatment.",
+      "severity": "Medium",
+      "recommendation": "Assess these scenarios using the existing 5x5 method and operations-led emergency plans.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-09",
+      "requirement": "Framework traceability and control ownership incomplete",
+      "finding": "Mappings name frameworks without detailed references; RMF/COBIT use and ownership/review cycles are unclear.",
+      "severity": "Medium",
+      "recommendation": "Use the framework-role rationale, source-backed PISF mapping, control owners and test frequencies in this project.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-10",
+      "requirement": "Inventory classification and dependencies incomplete",
+      "finding": "Asset classes, trust boundaries, data flows and AI model/vendor version records are missing or ambiguous.",
+      "severity": "Medium",
+      "recommendation": "Apply data classes, maintain architecture/dependency diagrams and the AI model inventory.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-11",
+      "requirement": "Financial case and board dashboard missing",
+      "finding": "No control costs, annual loss assumptions, cost-benefit analysis, budget or one-page board dashboard were supplied.",
+      "severity": "Medium",
+      "recommendation": "Review the illustrative PKR business case and executive dashboard, replace assumptions with quotations, and approve funding.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-12",
+      "requirement": "Document quality and source references need correction",
+      "finding": "Page numbers, repeated text, references, dates, versions and wording errors reduce traceability.",
+      "severity": "Low",
+      "recommendation": "Provide source-indexed deliverables, version metadata, consistent spectator terminology and a source discrepancy register.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "EXT-F-13",
+      "requirement": "Exercises and continuous improvement lack evidence",
+      "finding": "No tabletop/event-day exercise, pass criteria, measured results or closed loop from lessons to risk updates is evidenced.",
+      "severity": "Medium",
+      "recommendation": "Use the exercise calendar and test plan, record results, assign improvements and update linked risks and controls.",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    }
+  ],
+  "external_findings": [
+    {
+      "id": "F-01",
+      "severity": "High",
+      "title": "Control evidence and operating tests missing",
+      "observation": "All 15 controls have evidence requests but no dated operating artifacts or tested effectiveness.",
+      "evidence_refs": "E-06; E-15",
+      "recommendation": "Collect dated MFA, access-review, vendor, restore and SIEM artifacts for the five highest-risk controls, then extend to all controls.",
+      "owner": "CISO and CIO with control owners",
+      "period_days": "30",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-02",
+      "severity": "High",
+      "title": "Audit coverage excludes material risks",
+      "observation": "The plan omits spectator data breach, DDoS, replayed tickets, POS malware and IoT integrity; backup coverage is partial.",
+      "evidence_refs": "E-05; E-08; E-15; T-02",
+      "recommendation": "Test all 15 High/Critical risks, with a dedicated restore test and explicit reasons for phased work.",
+      "owner": "CISO and Internal Audit",
+      "period_days": "30",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-03",
+      "severity": "High",
+      "title": "Residual risk lacks evidence and acceptance",
+      "observation": "Residual figures are planning estimates without residual likelihood/impact, owners, dates or acceptance for seven High residual risks.",
+      "evidence_refs": "E-05; E-06; T-03",
+      "recommendation": "Link residual L/I to control test results and record an authorized accept-or-treat decision and review date.",
+      "owner": "Risk and Compliance Committee",
+      "period_days": "60",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-04",
+      "severity": "High",
+      "title": "Recovery dependency and event safety weaknesses",
+      "observation": "Gates target 15 minutes while dependencies target 30; backup intervals, missing targets and CCTV/BMS safe operation are unresolved.",
+      "evidence_refs": "E-03; E-13; E-14; T-04",
+      "recommendation": "Validate dependency-aware recovery, isolated fallback ticket checks and local CCTV/BMS operation with Operations and Physical Security; conduct a controlled exercise.",
+      "owner": "Stadium Operations Director, CISO and IT",
+      "period_days": "30-60",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-05",
+      "severity": "Medium",
+      "title": "Policy ownership and approval incomplete",
+      "observation": "No consolidated approved and versioned policy set, exceptions process or AI-use policy is evidenced.",
+      "evidence_refs": "E-11 to E-15",
+      "recommendation": "Adopt the proposed policy lifecycle with owners, approvers, review cycles, change control and exception records.",
+      "owner": "CISO",
+      "period_days": "60",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-06",
+      "severity": "High",
+      "title": "Compliance applicability and privacy duties incomplete",
+      "observation": "Payment, personal data, CCTV, retention, deletion, breach notification and PISF applicability lack documented analysis.",
+      "evidence_refs": "E-06; E-07; E-12",
+      "recommendation": "Review obligations with Privacy and Compliance; approve retention and breach procedures; maintain source-backed requirement mappings.",
+      "owner": "Privacy Officer with Risk and Compliance",
+      "period_days": "60",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-07",
+      "severity": "Medium",
+      "title": "Business objectives and risk appetite incomplete",
+      "observation": "The register lacks measurable objectives, approved appetite, complete risk ownership, evidence-based likelihood and due dates.",
+      "evidence_refs": "E-01; E-04; E-05",
+      "recommendation": "Review the proposed measurable objectives, risk escalation and acceptance procedure; assign risk owners and record scoring assumptions.",
+      "owner": "Board/CEO and CISO",
+      "period_days": "60",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-08",
+      "severity": "Medium",
+      "title": "Threat coverage misses people, AI and emergency failure",
+      "observation": "Mobile, public Wi-Fi, insiders, temporary staff, AI privacy/bias and non-malicious gate/power failure need explicit treatment.",
+      "evidence_refs": "E-03; E-04; E-11",
+      "recommendation": "Assess these scenarios using the existing 5x5 method and operations-led emergency plans.",
+      "owner": "CISO, Operations and Privacy Officer",
+      "period_days": "60",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-09",
+      "severity": "Medium",
+      "title": "Framework traceability and control ownership incomplete",
+      "observation": "Mappings name frameworks without detailed references; RMF/COBIT use and ownership/review cycles are unclear.",
+      "evidence_refs": "E-06; E-11 to E-14",
+      "recommendation": "Use the framework-role rationale, source-backed PISF mapping, control owners and test frequencies in this project.",
+      "owner": "CISO with Risk and Compliance",
+      "period_days": "60",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-10",
+      "severity": "Medium",
+      "title": "Inventory classification and dependencies incomplete",
+      "observation": "Asset classes, trust boundaries, data flows and AI model/vendor version records are missing or ambiguous.",
+      "evidence_refs": "E-03; E-12",
+      "recommendation": "Apply data classes, maintain architecture/dependency diagrams and the AI model inventory.",
+      "owner": "CIO and OT Manager",
+      "period_days": "60",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-11",
+      "severity": "Medium",
+      "title": "Financial case and board dashboard missing",
+      "observation": "No control costs, annual loss assumptions, cost-benefit analysis, budget or one-page board dashboard were supplied.",
+      "evidence_refs": "E-05; E-07; E-15",
+      "recommendation": "Review the illustrative PKR business case and executive dashboard, replace assumptions with quotations, and approve funding.",
+      "owner": "CIO/Finance and CISO",
+      "period_days": "90",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-12",
+      "severity": "Low",
+      "title": "Document quality and source references need correction",
+      "observation": "Page numbers, repeated text, references, dates, versions and wording errors reduce traceability.",
+      "evidence_refs": "A1-A3 document review",
+      "recommendation": "Provide source-indexed deliverables, version metadata, consistent spectator terminology and a source discrepancy register.",
+      "owner": "Report editors",
+      "period_days": "30",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    },
+    {
+      "id": "F-13",
+      "severity": "Medium",
+      "title": "Exercises and continuous improvement lack evidence",
+      "observation": "No tabletop/event-day exercise, pass criteria, measured results or closed loop from lessons to risk updates is evidenced.",
+      "evidence_refs": "E-13; E-14; E-15",
+      "recommendation": "Use the exercise calendar and test plan, record results, assign improvements and update linked risks and controls.",
+      "owner": "CISO and Operations Director",
+      "period_days": "60",
+      "source": "A4 third-party documentary audit; report pages 22-26"
+    }
+  ],
+  "audit_heads": [
+    {
+      "id": 1,
+      "head": "Business context and governance",
+      "weight": 10,
+      "points": 5.83
+    },
+    {
+      "id": 2,
+      "head": "Assets, classification and architecture",
+      "weight": 8,
+      "points": 3.25
+    },
+    {
+      "id": 3,
+      "head": "Risk assessment",
+      "weight": 12,
+      "points": 6.25
+    },
+    {
+      "id": 4,
+      "head": "Policies and processes",
+      "weight": 10,
+      "points": 3.75
+    },
+    {
+      "id": 5,
+      "head": "Framework mapping",
+      "weight": 10,
+      "points": 5
+    },
+    {
+      "id": 6,
+      "head": "Control design",
+      "weight": 15,
+      "points": 8.5
+    },
+    {
+      "id": 7,
+      "head": "Evidence and testing",
+      "weight": 10,
+      "points": 2.25
+    },
+    {
+      "id": 8,
+      "head": "Treatment and acceptance",
+      "weight": 8,
+      "points": 3
+    },
+    {
+      "id": 9,
+      "head": "Compliance and third parties",
+      "weight": 5,
+      "points": 2.75
+    },
+    {
+      "id": 10,
+      "head": "Incident response and resilience",
+      "weight": 5,
+      "points": 3.25
+    },
+    {
+      "id": 11,
+      "head": "Financial value",
+      "weight": 4,
+      "points": 0.25
+    },
+    {
+      "id": 12,
+      "head": "Executive reporting",
+      "weight": 3,
+      "points": 0.38
+    }
+  ],
+  "audit_tests": [
+    {
+      "id": "T-01",
+      "objective": "Recalculate all 16 risks and bands",
+      "outcome": "Pass",
+      "basis": "3 Critical, 12 High, 1 Medium; arithmetic verified. Likelihood evidence was unavailable.",
+      "source": "A4 p.14"
+    },
+    {
+      "id": "T-02",
+      "objective": "Trace High/Critical risks to audit tests",
+      "outcome": "Fail",
+      "basis": "15 material risks reviewed; five risk areas lack planned tests and backup coverage is incomplete.",
+      "source": "A4 pp.14-15"
+    },
+    {
+      "id": "T-03",
+      "objective": "Validate residual treatment scores",
+      "outcome": "Partial",
+      "basis": "15 treated scores total 220 before and 134 after, a planned 39.1% reduction. Operating effectiveness unverified.",
+      "source": "A4 p.15"
+    },
+    {
+      "id": "T-04",
+      "objective": "Check recovery dependencies and targets",
+      "outcome": "Fail",
+      "basis": "15-minute gate target conflicts with 30-minute dependencies; five assets lack targets; recovery tests unavailable.",
+      "source": "A4 p.15"
+    }
+  ],
+  "program_sections": [
+    {
+      "id": "governance",
+      "title": "Governance, objectives and risk decisions",
+      "content": "Proposed program policy v1.0. CISO owns the IA program, CEO sponsors it, Board approves appetite and material funding, Risk and Compliance reviews exceptions, and Internal Audit independently assesses evidence. Review quarterly and after a major event or incident.\nProposed measurable objectives for approval: preserve safe event operation; restore online entry service within its approved dependency-aware target; reject replayed tickets; review all privileged access monthly; collect evidence for every applicable control each quarter. Service owners approve numerical thresholds using capacity and exercise data.\nAppetite proposal: Critical risks require immediate CISO/Operations escalation and a Board treatment decision. High residual risks need a recorded accept-or-treat decision from Risk and Compliance, with safety-affecting cases escalated to the Board. Acceptance records include owner, rationale, compensating controls, expiry and review date. No software output grants acceptance.\nExceptions are time-limited, approved by the accountable risk owner, and linked to a risk and compensating control. Change management records request, impact/safety review, test, approval, rollback and post-change validation. Vulnerabilities are triaged by exposure and safety consequence, tested before patching, and retested after deployment.",
+      "source": "A1 pp.4-5; A4 F-03/F-05/F-07",
+      "status": "Proposed for approval"
+    },
+    {
+      "id": "frameworks",
+      "title": "Framework selection and accountability",
+      "content": "NIST CSF organizes governance, identify/protect/detect/respond/recover outcomes. NIST RMF supplies categorize-select-implement-assess-authorize-monitor decision gates. ISO/IEC 27001 supplies the ISMS, risk treatment and statement-of-applicability process. COBIT assigns objectives, accountability and performance oversight. CIS Controls prioritizes practical safeguards. IEC 62443 defines OT zones/conduits and maintenance boundaries. NIST SP 800-82 informs OT constraints and safe change. NIST AI RMF structures Govern/Map/Measure/Manage for the crowd model and recommendation assistant. PISF 2026 provides the national benchmark mapping.\nPASS is a hypothetical venue and its ownership/CII designation is unspecified. The PISF mapping is adopted as a project benchmark. Mandatory legal applicability requires confirmation of the entity's status and the official framework scope. Named framework selection does not establish certification or compliance. Control tests and evidence records support each assessment.",
+      "source": "A2 framework selection; A4 F-06/F-09; https://pkcert.gov.pk/grc-policies.asp",
+      "status": "Documented design"
+    },
+    {
+      "id": "privacy",
+      "title": "Data protection and retention schedule",
+      "content": "Ticket records flow from web/mobile through the application service to the spectator database and gate validation service. Payments use a provider boundary with tokenized transaction references. CCTV and sensor streams feed Physical Security; analytics outputs remain advisory. Staff/HR records use restricted corporate access. Backup copies inherit the source classification.\nApply A3 classes Public, Internal, Confidential, Restricted and Critical. Display Critical as safety/operational classification alongside the separate numeric asset criticality. Encrypt sensitive transfers/storage, manage keys separately, log access and exports, and minimize fields sent to analytics or external AI.\nProposed operational retention for approval: routine CCTV 30 days, access/vendor and critical security logs 12 months, non-critical security logs 3 months, ticket/contact data 90 days after an event unless a documented business/legal need applies. These are proposed periods, subject to applicable law, payment-provider terms, claims and legal holds. Privacy Officer approves the final schedule. Deletion jobs log dataset, policy, date, count and reviewer; legal holds suspend deletion. Incident leads assess exposure and notification obligations with legal/contract owners and retain the decision record.",
+      "source": "A3 data handling; A4 F-06/F-10; final-project proposal",
+      "status": "Proposed for approval"
+    },
+    {
+      "id": "iam",
+      "title": "IAM lifecycle and separation of duties",
+      "content": "HR/business sponsor requests a named identity and role. Manager approves business access; system owner approves sensitive access; IAM provisions least privilege with MFA; SOC collects identity events. Leavers are disabled promptly and sessions/tokens revoked. Movers lose obsolete rights before new rights are granted. Temporary event staff receive event-limited accounts.\nMonthly privileged and quarterly ordinary-user reviews follow A3. Vendor access requires sponsor, scoped task, start/end, MFA, VPN/jump host, session logging and immediate revocation after work. Break-glass use is time-limited, logged and independently reviewed.\nIncompatible duties: access requester cannot approve their request; administrators cannot certify their own access review; developers cannot solely approve production deployment; backup administrators cannot solely approve restore evidence; AI recommendation author cannot issue risk acceptance. Operations and Physical Security approve safety-affecting changes.",
+      "source": "A3 IAM; A4 F-05/F-13",
+      "status": "Documented design"
+    },
+    {
+      "id": "recovery",
+      "title": "Dependency-aware continuity and safe operation",
+      "content": "A3 source RTO/RPO values remain the historical baseline. Proposed recovery design first restores an isolated local entry capability, with cached signed admission data and a local anti-replay ledger, while restoring network/IAM/database services. This fallback requires proof of freshness, revocation handling, reconciliation and crowd-management approval before use. If the fallback fails validation, online gate-service recovery cannot be promised faster than its dependencies.\nFor CCTV/BMS, isolate compromised IT conduits at approved boundaries while retaining authorized local control, local recording and manual observation where designed. Operators preserve fire/egress functions and follow manufacturer-approved emergency procedures. The Operations incident lead and Physical Security/Facilities authorize any operational change. This project does not specify a live gate unlock or building isolation action.\nProposed protected backups use independent credentials, encryption, immutable/offline copies and isolated restoration. Replication is not a substitute for backup. Five-minute RPO requires demonstrated transaction replication or event journaling at that frequency. Measure end-to-end restore time from incident declaration to business acceptance, including dependencies, integrity checks and reconciliation.",
+      "source": "A3 recovery/IR; A4 F-04/T-04; final-project proposed design",
+      "status": "Proposed; controlled validation required"
+    },
+    {
+      "id": "incident",
+      "title": "Incident command and communication",
+      "content": "CISO leads the cyber response; Operations Director controls event-operation decisions; Physical Security and Facilities control their safety procedures. SOC triages and records the incident timeline. IT isolates affected business endpoints, preserves evidence, restores from clean sources and validates identities before reconnection.\nProposed severity scheme: SEV1 safety exposure, significant spectator-data compromise or loss of a critical event service; SEV2 contained material service compromise; SEV3 limited lower-impact incident. SOC immediately calls CISO and Operations for SEV1 and uses a 15-minute internal escalation target for exercises. Management approves external communications; Privacy/Legal evaluate notification duties. Avoid attributing a legal reporting deadline without a verified obligation.\nCommunication template records confirmed impact, affected services, protective instructions, current workaround, next update time and approved spokesperson. Preserve original evidence, cryptographic hashes, collection time/timezone, collector, transfer history and restricted access. Lessons produce linked corrective actions, risk reassessments and verification dates.",
+      "source": "A3 ransomware scenario; A4 F-04/F-13; final-project proposal",
+      "status": "Documented response design"
+    },
+    {
+      "id": "soc",
+      "title": "SOC architecture and monitoring plan",
+      "content": "Sources include endpoint/EDR, email, IAM/PAM, VPN/jump hosts, firewalls, cloud audit, ticketing and database export logs, POS management, CCTV administration, BMS gateways, IoT device identity and backup jobs. Where OT devices cannot export safely, use approved passive/gateway collection. Normalize events, synchronize clocks, send through protected collectors to SIEM, enrich and correlate, then route incidents to SOC and CISO/Operations.\nTest cases cover privileged-login anomalies, replayed tickets, unusual exports, guest-to-OT denials, expired vendor sessions, failed/altered backups and model-input integrity alerts. Each rule records source, owner, expected alert, triage action and false-positive review. Monitor source heartbeat, dropped events and storage. Daily source health and monthly sample alert tests supplement event-day checks. SOAR may group/enrich/route alerts; containment and safety changes require authorized humans.",
+      "source": "A3 monitoring; A4 F-13 and missing BMS/CCTV/POS sources",
+      "status": "Proposed monitoring design"
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud and IoT/OT security architecture",
+      "content": "Separate public/guest access, externally facing applications, corporate services, payment systems and OT/safety zones. Use default-deny conduits and approved application/API paths. Public Wi-Fi cannot route to corporate or OT management. Vendor maintenance terminates at an MFA-protected jump host with task approval and session expiry.\nCloud responsibility matrix: provider supplies contracted infrastructure protections; PASS owns identity, workload configuration, data classification, encryption/key decisions, backup validation and incident integration; SaaS responsibilities follow the service agreement. Review public storage, privileged grants, secrets and configuration drift.\nIoT inventory records device owner, firmware version, support end date, device identity, approved protocol and maintenance window. Authenticate devices, validate telemetry freshness, encrypt supported links and isolate unsupported devices with compensating controls. Facilities approves OT patches and rollback after representative lab tests. Maintain local operational procedures for network/provider loss.",
+      "source": "A1-A3; A4 F-08/F-10",
+      "status": "Documented design"
+    },
+    {
+      "id": "ai",
+      "title": "AI governance and model inventory",
+      "content": "Inventory both systems: A16 crowd prediction and the local PASS risk/control assistant. Record model/rules version, training/reference source, owner, data classification, purpose, permitted outputs, provider and review date. Crowd-model version/vendor details require supplier confirmation. The assistant uses the versioned local control catalog and optional validated LLM ranking.\nHallucination: restrict recommendations to catalog IDs and check output. Bias: review per-scenario error rates. Leakage: use synthetic/minimized inputs; approve external providers and retention. Prompt injection: treat text as untrusted, allow no tool execution, validate IDs. Drift: rerun a fixed benchmark after catalog/provider changes. Over-reliance: require human verification and separate approval. Explainability: expose matching risk, rationale, framework and evidence. Availability: offline local mode and manual review. Vendor risk: version/change review, incident notice, exit plan and revalidation.\nCISO owns the assistant; Privacy approves data use; Risk and Compliance approves governance changes. Crowd guidance is advisory to Physical Security. High-impact decisions, certification, risk acceptance and live operational changes remain accountable human decisions.",
+      "source": "A1 R16; A4 F-08; project AI requirement",
+      "status": "Documented governance design"
+    },
+    {
+      "id": "exercise",
+      "title": "Exercise calendar and acceptance criteria",
+      "content": "Before each major event: Operations checks contacts, fallback documents, backup status and local control availability. Monthly: IT performs a sampled isolated restore and privileged-access review. Quarterly: SOC replays labeled test events, owners review evidence, and Risk and Compliance reviews open High risks and exceptions. Twice yearly: cross-functional DR and ransomware tabletop including Operations, Physical Security, Facilities, Privacy and key suppliers. Annually: independent audit, BIA refresh and supplier reassessment.\nEach exercise records objective, participants, scenario, start/end, observed RTO/RPO, integrity checks, pass/fail, evidence IDs and improvement owners. Pass requires business acceptance, safe operation, approved target attainment and accurate reconciliation. A failed criterion creates or updates a finding and linked risk. Closure requires a repeated successful test and independent reviewer sign-off. No exercise is claimed as completed in the source assignments.",
+      "source": "A3 monthly/twice-yearly schedule; A4 F-13; final-project test design",
+      "status": "Planned exercises"
+    },
+    {
+      "id": "finance",
+      "title": "Illustrative PKR business case",
+      "content": "Classroom planning assumptions for one year, pending Finance approval and supplier quotations. Three independent loss scenarios are assumed: privileged compromise asset value PKR 10,000,000, exposure factor 0.20, ARO 0.30; ransomware PKR 8,000,000, EF 0.30, ARO 0.25; spectator breach PKR 6,000,000, EF 0.25, ARO 0.20. Their SLE values are PKR 2,000,000, 2,400,000 and 1,500,000; ALE values are PKR 600,000, 600,000 and 300,000. Total illustrative ALE is PKR 1,500,000 per year.\nAssume respective post-control ALE of PKR 300,000, 240,000 and 150,000, totaling PKR 690,000. Estimated annual benefit is PKR 810,000. Proposed annualized control costs are PKR 180,000 for MFA/PAM, PKR 220,000 for backup/EDR, and PKR 100,000 for data access/export controls, totaling PKR 500,000. BCR is 810,000/500,000 = 1.62. ROSI is (810,000-500,000)/500,000 = 62%.\nScenarios may overlap; the example assumes no shared incident losses. Finance must de-duplicate scenarios and validate frequencies, costs and useful lives. Life safety and binding duties can justify controls irrespective of BCR. These monetary estimates are independent of the ordinal 1-25 risk scores.",
+      "source": "A4 F-11; final-project illustrative assumptions",
+      "status": "Illustrative financial model"
+    },
+    {
+      "id": "pqc",
+      "title": "Three-year future readiness",
+      "content": "Year 1 establishes the five registers, ownership, applicable obligations, MFA, segmentation, safe fallback design and baseline testing. Priority milestones are 30-day evidence collection/audit coverage, 60-day approved treatment/privacy/recovery design, and 90-day costed board decisions plus re-audit. Milestones are relative to an approved project start; source audit date conflicts prevent inferring calendar deadlines.\nYear 2 expands measured recovery, passive OT telemetry, supplier assurance, model-performance monitoring and repeatable evidence collection. Compare pre/post control tests and track exception age and remediation results.\nYear 3 integrates continuous assurance and cryptographic inventory, identifies long-lived sensitive data and public-key dependencies, evaluates supplier post-quantum roadmaps, and tests migration in a non-production environment. Adopt algorithms and deadlines only after verifying current national/vendor guidance and compatibility. Reassess the roadmap annually with ownership, evidence and funding decisions.",
+      "source": "Project three-year roadmap; A1 future challenges; A4 corrective actions",
+      "status": "Proposed roadmap"
+    },
+    {
+      "id": "discrepancies",
+      "title": "Source discrepancies and scope",
+      "content": "A4 cover dates the audit 24 October 2026, while test/closing sheets use 13 October and Assignment 3 is listed as 14 October. Preserve all reported dates; ask auditors to confirm chronology before calculating calendar due dates. A4 records 44.46/100 and an insufficient-assurance conclusion in the executive text, while a closing checkbox selects Partially effective. Under the report's own scale, 44.46 is Insufficient; display the conflicting checkbox as a source discrepancy.\nA4's 39.1% is planned ordinal risk-score reduction across 15 treated risks (220 to 134). Its 33.3% is weighted heat-map readiness, distinct from the course's satisfied/applicable compliance ratio. No Critical findings were reported, while F-04 is High and priority safety escalation. The three Critical risks and High findings are different populations.\nThe reviewed baseline contains 16 assets and 16 risks. Preserve IDs, source recovery targets and source planning estimates; track final-project additions with separate provenance. Audit conclusions cover classroom documents and do not certify live control operation.",
+      "source": "A4 pp.1,14-16,25-27",
+      "status": "Verified source discrepancies"
+    },
+    {
+      "id": "risk_extensions",
+      "title": "Additional risk scenarios and preliminary scoring",
+      "status": "Proposed additions; owner review pending",
+      "source": "A4 F-07/F-08; final-project planning assumptions",
+      "content": "The original 16-risk register remains the assignment baseline. The following proposed scenarios extend scope and require owner validation before incorporation into the approved baseline. Scores use the same L x I model and are planning judgments, not measured frequencies.\nPR17 Mobile API account abuse: A03, weak session/object authorization; L3 x I4 = 12 High. Digital Services owner tests session expiry, access checks and export limits; require application test evidence.\nPR18 Public Wi-Fi abuse or pivot: A10/A09, weak isolation and unmanaged devices; L3 x I4 = 12 High. Network owner verifies guest isolation and response logging.\nPR19 Insider or temporary-staff misuse: A13/A04, excessive event access; L3 x I4 = 12 High. CISO/HR validates time-bound roles, supervision and leaver removal.\nPR20 Gate/power/network failure during emergency movement: A01/A09, common dependencies or missing safe operating arrangements; L3 x I5 = 15 High with priority safety escalation. Operations and competent safety specialists validate approved emergency procedures, resilient power and a controlled exercise.\nPR21 Video-analytics privacy or subgroup bias: A16/A06, excessive collection and uneven model performance; L3 x I4 = 12 High. Privacy/Physical Security review data minimization and representative error rates.\nPR22 AI assistant prompt injection or leakage: recommendation workflow, untrusted input and external-provider data handling; L3 x I4 = 12 High. CISO tests allowed IDs, no tool execution and synthetic/minimized external inputs.\nPR23 Cloud/provider outage or model change: A12/A16, concentrated dependency; L3 x I4 = 12 High. CIO validates recovery/export capability and version-change regression tests.\nTreatments are proposed, residual L/I remain unassessed, and no acceptance decision is implied."
+    }
+  ],
+  "recovery_design": [
+    {
+      "asset_id": "A01",
+      "dependencies": "A04 database; A09 network; A13 IAM",
+      "proposed_rto": "15 min local fallback / 30 min online",
+      "proposed_rpo": "5 min",
+      "fallback": "Signed local cache and anti-replay ledger; Operations-approved manual checks",
+      "acceptance_test": "Validate freshness, duplicate rejection, reconciliation and queue safety",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "60 min online-entry interruption with validated local fallback; life-safety continuity required",
+      "business_impact": "Event queues and admission integrity",
+      "data_classification": "Critical (safety/operations)"
+    },
+    {
+      "asset_id": "A02",
+      "dependencies": "A04; A09; A12; A13",
+      "proposed_rto": "1 hr",
+      "proposed_rpo": "15 min",
+      "fallback": "Approved local entry capability while online sales paused",
+      "acceptance_test": "Validate protected restore and valid-ticket reconciliation",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "2 hr",
+      "business_impact": "Event queues and admission integrity",
+      "data_classification": "Confidential"
+    },
+    {
+      "asset_id": "A03",
+      "dependencies": "A02; A04; A12",
+      "proposed_rto": "2 hr",
+      "proposed_rpo": "30 min",
+      "fallback": "Assisted service desk and approved ticket lookup",
+      "acceptance_test": "Reauthenticate and confirm no duplicated purchase or ticket",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "4 hr",
+      "business_impact": "Event queues and admission integrity",
+      "data_classification": "Confidential"
+    },
+    {
+      "asset_id": "A04",
+      "dependencies": "A09; A12; A13; A14",
+      "proposed_rto": "30 min",
+      "proposed_rpo": "5 min proposed (source 15 min)",
+      "fallback": "Replicated transaction journal with independent protected backup",
+      "acceptance_test": "Measure journal lag and consistent restoration before opening writes",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "1 hr",
+      "business_impact": "Event queues and admission integrity",
+      "data_classification": "Restricted"
+    },
+    {
+      "asset_id": "A05",
+      "dependencies": "Payment provider; A09; A13",
+      "proposed_rto": "2 hr",
+      "proposed_rpo": "15 min",
+      "fallback": "Pause card transactions or approved provider offline process",
+      "acceptance_test": "Validate settlement and no duplicate transactions",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "4 hr",
+      "business_impact": "Service, revenue, confidentiality or recovery dependency interruption",
+      "data_classification": "Restricted"
+    },
+    {
+      "asset_id": "A06",
+      "dependencies": "Local recorder; A09; A13",
+      "proposed_rto": "30 min",
+      "proposed_rpo": "5 min",
+      "fallback": "Local recording and authorized manual observation",
+      "acceptance_test": "Verify local recording and camera visibility during IT isolation",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "1 hr central service; local recording/observation continuity required",
+      "business_impact": "Event safety visibility and facility operation",
+      "data_classification": "Restricted"
+    },
+    {
+      "asset_id": "A07",
+      "dependencies": "Local controllers; A09; vendor gateway",
+      "proposed_rto": "1 hr",
+      "proposed_rpo": "15 min config",
+      "fallback": "Facilities-approved local/manual control",
+      "acceptance_test": "Facilities validates local control and emergency functions",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "2 hr central management; local safety functions continuous",
+      "business_impact": "Event safety visibility and facility operation",
+      "data_classification": "Critical (safety/operations)"
+    },
+    {
+      "asset_id": "A08",
+      "dependencies": "Gateway; local power; A09",
+      "proposed_rto": "1 hr",
+      "proposed_rpo": "15 min",
+      "fallback": "Manual crowd/facility observation",
+      "acceptance_test": "Reject stale telemetry and validate restored sensor identity",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "2 hr with manual observation",
+      "business_impact": "Event safety visibility and facility operation",
+      "data_classification": "Internal"
+    },
+    {
+      "asset_id": "A09",
+      "dependencies": "Power; network configuration backups",
+      "proposed_rto": "30 min",
+      "proposed_rpo": "15 min config",
+      "fallback": "Isolated standby network components",
+      "acceptance_test": "Restore approved conduits and test blocked paths",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "1 hr",
+      "business_impact": "Service, revenue, confidentiality or recovery dependency interruption",
+      "data_classification": "Critical (safety/operations)"
+    },
+    {
+      "asset_id": "A10",
+      "dependencies": "ISP; A09",
+      "proposed_rto": "4 hr",
+      "proposed_rpo": "N/A",
+      "fallback": "Communicate Wi-Fi outage to spectators",
+      "acceptance_test": "Verify guest isolation after recovery",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "8 hr",
+      "business_impact": "Service, revenue, confidentiality or recovery dependency interruption",
+      "data_classification": "Internal"
+    },
+    {
+      "asset_id": "A11",
+      "dependencies": "Local media controller; A09",
+      "proposed_rto": "2 hr",
+      "proposed_rpo": "1 hr config",
+      "fallback": "Approved local announcements/manual signage",
+      "acceptance_test": "Verify approved content and restricted administration",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "4 hr with approved announcements",
+      "business_impact": "Service, revenue, confidentiality or recovery dependency interruption",
+      "data_classification": "Internal"
+    },
+    {
+      "asset_id": "A12",
+      "dependencies": "Cloud provider; recovery account; A14",
+      "proposed_rto": "30 min priority workloads",
+      "proposed_rpo": "15 min",
+      "fallback": "Secondary recovery environment",
+      "acceptance_test": "Test independent recovery credentials and service restore",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "1 hr priority workloads",
+      "business_impact": "Service, revenue, confidentiality or recovery dependency interruption",
+      "data_classification": "Confidential"
+    },
+    {
+      "asset_id": "A13",
+      "dependencies": "A09; protected identity recovery",
+      "proposed_rto": "30 min",
+      "proposed_rpo": "15 min",
+      "fallback": "Logged emergency accounts with independent review",
+      "acceptance_test": "Restore access then reconcile temporary privileged use",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "1 hr",
+      "business_impact": "Service, revenue, confidentiality or recovery dependency interruption",
+      "data_classification": "Critical (safety/operations)"
+    },
+    {
+      "asset_id": "A14",
+      "dependencies": "Independent storage/accounts; offline copy",
+      "proposed_rto": "30 min recovery access",
+      "proposed_rpo": "15 min catalog",
+      "fallback": "Offline/immutable copy and isolated recovery workstation",
+      "acceptance_test": "Verify copy integrity and restore privileges are independent",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "1 hr recovery-access service",
+      "business_impact": "Service, revenue, confidentiality or recovery dependency interruption",
+      "data_classification": "Critical (safety/operations)"
+    },
+    {
+      "asset_id": "A15",
+      "dependencies": "A09; storage; collectors",
+      "proposed_rto": "1 hr",
+      "proposed_rpo": "15 min",
+      "fallback": "Buffered collectors and manual incident log",
+      "acceptance_test": "Replay missing events and verify clock alignment",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "2 hr with buffered logs/manual triage",
+      "business_impact": "Service, revenue, confidentiality or recovery dependency interruption",
+      "data_classification": "Confidential"
+    },
+    {
+      "asset_id": "A16",
+      "dependencies": "A06; A08; A12; approved model artifact",
+      "proposed_rto": "4 hr",
+      "proposed_rpo": "1 hr config",
+      "fallback": "Human crowd monitoring without model guidance",
+      "acceptance_test": "Validate model version and fixed benchmark before use",
+      "status": "Proposed; requires owner approval and exercise",
+      "proposed_mtd": "8 hr with human crowd monitoring",
+      "business_impact": "Service, revenue, confidentiality or recovery dependency interruption",
+      "data_classification": "Restricted"
+    }
+  ],
+  "supplier_reviews": [
+    {
+      "id": "SUP-01",
+      "service": "Cloud ticketing",
+      "owner": "CIO / Commercial",
+      "data_access": "Spectator and transaction data",
+      "requirements": "MFA, encryption, incident notice, restore/export support",
+      "evidence_request": "Service agreement, region/subprocessors, assurance report, restore test",
+      "residual_concern": "Provider outage and data transfer",
+      "status": "Assessment designed; supplier evidence requested"
+    },
+    {
+      "id": "SUP-02",
+      "service": "Payment provider",
+      "owner": "Finance",
+      "data_access": "Tokens/settlement; confirm card-data scope",
+      "requirements": "Provider-confirmed PCI scope, segregation, settlement reconciliation",
+      "evidence_request": "Contract and provider attestation appropriate to service",
+      "residual_concern": "Payment interruption and scope uncertainty",
+      "status": "Assessment designed; supplier evidence requested"
+    },
+    {
+      "id": "SUP-03",
+      "service": "BMS/IoT maintenance",
+      "owner": "Facilities / OT",
+      "data_access": "Privileged remote maintenance",
+      "requirements": "Sponsored time-boxed access, jump host, firmware support, safety change approval",
+      "evidence_request": "Access logs, firmware lifecycle and vendor support statement",
+      "residual_concern": "Remote compromise and unsupported devices",
+      "status": "Assessment designed; supplier evidence requested"
+    },
+    {
+      "id": "SUP-04",
+      "service": "Internet/telecom",
+      "owner": "CIO / Network",
+      "data_access": "Network access and service metadata",
+      "requirements": "DDoS support, service restoration, redundant path",
+      "evidence_request": "SLA, escalation contacts, failover exercise",
+      "residual_concern": "Connectivity dependency",
+      "status": "Assessment designed; supplier evidence requested"
+    },
+    {
+      "id": "SUP-05",
+      "service": "AI analytics provider",
+      "owner": "Physical Security / Privacy",
+      "data_access": "Video, derived crowd metrics and model artifacts",
+      "requirements": "Data minimization, deletion, model/version notice, bias testing and exit",
+      "evidence_request": "Data terms, model card, subgroup/error review and incident process",
+      "residual_concern": "Bias, drift and external data processing",
+      "status": "Assessment designed; supplier evidence requested"
+    }
+  ],
+  "project_coverage": [
+    {
+      "component": "Organization architecture",
+      "route": "Organization & Governance",
+      "source": "A1 pp.2-6",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Architecture and trust boundaries"
+    },
+    {
+      "component": "Governance structure",
+      "route": "Organization & Governance",
+      "source": "A1 pp.4-5; A4 F-05/F-07",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Policy approval and risk appetite approval"
+    },
+    {
+      "component": "Asset inventory",
+      "route": "Asset Register",
+      "source": "A1 pp.5-6; A4 F-10",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Owner confirmation of classification/dependencies"
+    },
+    {
+      "component": "Data inventory",
+      "route": "Data Protection",
+      "source": "A3 data classes; A4 F-06/F-10",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Approve retention and transfer inventory"
+    },
+    {
+      "component": "Risk register",
+      "route": "Risk Register",
+      "source": "A1 pp.8-10",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Risk-owner decisions and new scenario assessment"
+    },
+    {
+      "component": "Risk calculations",
+      "route": "Risk Register",
+      "source": "A1 5x5; A4 T-01",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Validate likelihood assumptions"
+    },
+    {
+      "component": "Risk treatment",
+      "route": "Risk Register",
+      "source": "A2 treatment; A4 F-03",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Verified residual scores and acceptance"
+    },
+    {
+      "component": "Framework selection",
+      "route": "Program Completion",
+      "source": "A2 framework selection",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Approve applicability"
+    },
+    {
+      "component": "Control matrix",
+      "route": "Control Register",
+      "source": "A2 15 packages",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Control operating tests"
+    },
+    {
+      "component": "PISF mapping",
+      "route": "Compliance Register",
+      "source": "Official PISF 2026 paragraph mapping; A2",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Assess scoped clauses with evidence"
+    },
+    {
+      "component": "Compliance assessment",
+      "route": "Compliance Register",
+      "source": "A2 heat map; A4 F-06",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Privacy/contract applicability review"
+    },
+    {
+      "component": "Audit plan",
+      "route": "Program Completion",
+      "source": "A2 plan; A4 F-02",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Execute expanded tests"
+    },
+    {
+      "component": "IAM architecture",
+      "route": "IAM & Access Assurance",
+      "source": "A3 IAM",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Dated access-review evidence"
+    },
+    {
+      "component": "Data protection architecture",
+      "route": "Data Protection",
+      "source": "A3 handling; final design",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Validate data flows and deletion"
+    },
+    {
+      "component": "BIA",
+      "route": "BC/DR",
+      "source": "A3 recovery; A4 T-04",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Approve maximum tolerable disruption and dependencies"
+    },
+    {
+      "component": "RTO/RPO",
+      "route": "BC/DR",
+      "source": "A3 targets; final recovery proposal",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Measured tests"
+    },
+    {
+      "component": "DR architecture",
+      "route": "BC/DR",
+      "source": "A3 primary/replication/backup/DR",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Test failover and protected restore"
+    },
+    {
+      "component": "Incident response plan",
+      "route": "Incident Response",
+      "source": "A3 incident lifecycle; A4 F-04/F-13",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Operations/safety exercise"
+    },
+    {
+      "component": "SOC architecture",
+      "route": "SOC & Monitoring",
+      "source": "A3 sources; final monitoring plan",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Source health and alert test results"
+    },
+    {
+      "component": "AI governance",
+      "route": "AI Governance",
+      "source": "A1 R16; final AI governance",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Provider/model details and review sign-off"
+    },
+    {
+      "component": "Cloud security",
+      "route": "Cloud / IoT / OT Security",
+      "source": "A1/A2 R09; final shared-responsibility design",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Provider scope and configuration evidence"
+    },
+    {
+      "component": "IoT/OT security",
+      "route": "Cloud / IoT / OT Security",
+      "source": "A1/A2 R06/R07; A4 F-04",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Safe local operation and support lifecycle"
+    },
+    {
+      "component": "Supply-chain assessment",
+      "route": "Program Completion",
+      "source": "A2 R13; A3 vendor controls",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Supplier-specific assurance artifacts"
+    },
+    {
+      "component": "Maturity assessment",
+      "route": "Maturity & Roadmap",
+      "source": "A4 documentary criteria; final rubric",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Reviewer sign-off on documentary scores"
+    },
+    {
+      "component": "3-year roadmap",
+      "route": "Maturity & Roadmap",
+      "source": "Project requirements; A4 30/60/90 actions",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Funding and start-date approval"
+    },
+    {
+      "component": "Executive dashboard",
+      "route": "Executive Dashboard",
+      "source": "Project KPI formulas; A4 weighted audit",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Refresh as operating evidence is collected"
+    },
+    {
+      "component": "AI automation and evaluation",
+      "route": "AI Risk & Control Assistant",
+      "source": "Local prototype plus benchmark",
+      "status": "Design/prototype supplied",
+      "remaining_evidence": "Human-verified paired manual/assisted timing"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "DOC-A1",
+      "type": "Source document",
+      "description": "A1 organization/assets/risks",
+      "owner": "Group 10",
+      "status": "Collected",
+      "source": "A1 organization/assets/risks"
+    },
+    {
+      "id": "DOC-A2",
+      "type": "Source document",
+      "description": "A2 treatment/control/compliance design",
+      "owner": "Group 10",
+      "status": "Collected",
+      "source": "A2 treatment/control/compliance design"
+    },
+    {
+      "id": "DOC-A3",
+      "type": "Source document",
+      "description": "A3 IAM/data/resilience/response",
+      "owner": "Group 10",
+      "status": "Collected",
+      "source": "A3 IAM/data/resilience/response"
+    },
+    {
+      "id": "DOC-A4",
+      "type": "Source document",
+      "description": "A4 independent documentary audit",
+      "owner": "Independent audit team",
+      "status": "Collected",
+      "source": "A4 independent documentary audit"
+    }
+  ],
+  "roadmap_actions": [
+    {
+      "id": "FINAL-Y1-01",
+      "year": 1,
+      "action": "Collect dated MFA, access-review, vendor, restore and SIEM artifacts for the five highest-risk controls, then extend to all controls.",
+      "owner": "CISO and CIO with control owners",
+      "status": "Planned",
+      "success_criterion": "Address F-01 with linked evidence and independent re-review; target 30 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-02",
+      "year": 1,
+      "action": "Test all 15 High/Critical risks, with a dedicated restore test and explicit reasons for phased work.",
+      "owner": "CISO and Internal Audit",
+      "status": "Planned",
+      "success_criterion": "Address F-02 with linked evidence and independent re-review; target 30 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-03",
+      "year": 1,
+      "action": "Link residual L/I to control test results and record an authorized accept-or-treat decision and review date.",
+      "owner": "Risk and Compliance Committee",
+      "status": "Planned",
+      "success_criterion": "Address F-03 with linked evidence and independent re-review; target 60 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-04",
+      "year": 1,
+      "action": "Validate dependency-aware recovery, isolated fallback ticket checks and local CCTV/BMS operation with Operations and Physical Security; conduct a controlled exercise.",
+      "owner": "Stadium Operations Director, CISO and IT",
+      "status": "Planned",
+      "success_criterion": "Address F-04 with linked evidence and independent re-review; target 30-60 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-05",
+      "year": 1,
+      "action": "Adopt the proposed policy lifecycle with owners, approvers, review cycles, change control and exception records.",
+      "owner": "CISO",
+      "status": "Planned",
+      "success_criterion": "Address F-05 with linked evidence and independent re-review; target 60 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-06",
+      "year": 1,
+      "action": "Review obligations with Privacy and Compliance; approve retention and breach procedures; maintain source-backed requirement mappings.",
+      "owner": "Privacy Officer with Risk and Compliance",
+      "status": "Planned",
+      "success_criterion": "Address F-06 with linked evidence and independent re-review; target 60 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-07",
+      "year": 1,
+      "action": "Review the proposed measurable objectives, risk escalation and acceptance procedure; assign risk owners and record scoring assumptions.",
+      "owner": "Board/CEO and CISO",
+      "status": "Planned",
+      "success_criterion": "Address F-07 with linked evidence and independent re-review; target 60 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-08",
+      "year": 1,
+      "action": "Assess these scenarios using the existing 5x5 method and operations-led emergency plans.",
+      "owner": "CISO, Operations and Privacy Officer",
+      "status": "Planned",
+      "success_criterion": "Address F-08 with linked evidence and independent re-review; target 60 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-09",
+      "year": 1,
+      "action": "Use the framework-role rationale, source-backed PISF mapping, control owners and test frequencies in this project.",
+      "owner": "CISO with Risk and Compliance",
+      "status": "Planned",
+      "success_criterion": "Address F-09 with linked evidence and independent re-review; target 60 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-10",
+      "year": 1,
+      "action": "Apply data classes, maintain architecture/dependency diagrams and the AI model inventory.",
+      "owner": "CIO and OT Manager",
+      "status": "Planned",
+      "success_criterion": "Address F-10 with linked evidence and independent re-review; target 60 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-11",
+      "year": 1,
+      "action": "Review the illustrative PKR business case and executive dashboard, replace assumptions with quotations, and approve funding.",
+      "owner": "CIO/Finance and CISO",
+      "status": "Planned",
+      "success_criterion": "Address F-11 with linked evidence and independent re-review; target 90 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-12",
+      "year": 1,
+      "action": "Provide source-indexed deliverables, version metadata, consistent spectator terminology and a source discrepancy register.",
+      "owner": "Report editors",
+      "status": "Planned",
+      "success_criterion": "Address F-12 with linked evidence and independent re-review; target 30 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y1-13",
+      "year": 1,
+      "action": "Use the exercise calendar and test plan, record results, assign improvements and update linked risks and controls.",
+      "owner": "CISO and Operations Director",
+      "status": "Planned",
+      "success_criterion": "Address F-13 with linked evidence and independent re-review; target 60 days from approved start",
+      "source": "A4 corrective recommendation; final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y2-01",
+      "year": 2,
+      "action": "Evidence automation",
+      "owner": "CISO",
+      "status": "Planned",
+      "success_criterion": "Collect dated control evidence and source-health metrics each quarter",
+      "source": "Final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y2-02",
+      "year": 2,
+      "action": "Supplier and OT validation",
+      "owner": "CIO / Facilities",
+      "status": "Planned",
+      "success_criterion": "Complete supplier reviews and controlled failover tests",
+      "source": "Final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y2-03",
+      "year": 2,
+      "action": "AI monitoring",
+      "owner": "CISO / Privacy",
+      "status": "Planned",
+      "success_criterion": "Track benchmark errors, provider changes and review outcomes",
+      "source": "Final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y3-01",
+      "year": 3,
+      "action": "Continuous assurance",
+      "owner": "CISO",
+      "status": "Planned",
+      "success_criterion": "Reconcile live indicators to evidence and risk decisions",
+      "source": "Final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y3-02",
+      "year": 3,
+      "action": "Cryptographic migration readiness",
+      "owner": "CIO",
+      "status": "Planned",
+      "success_criterion": "Inventory public-key dependencies and test supplier-supported migration",
+      "source": "Final-project proposed roadmap"
+    },
+    {
+      "id": "FINAL-Y3-03",
+      "year": 3,
+      "action": "Independent program reassessment",
+      "owner": "Internal Audit",
+      "status": "Planned",
+      "success_criterion": "Reassess maturity and corrective action effectiveness",
+      "source": "Final-project proposed roadmap"
+    }
+  ],
+  "compliance_requirements": [
+    {
+      "id": "FINAL-PISF-NET-4B",
+      "framework": "PISF 2026",
+      "requirement": "Network segregation",
+      "purpose": "Voluntary project benchmark; confirm legal entity/CII scope",
+      "status": null,
+      "gap": "Operating evidence not assessed",
+      "recommendation": "Test mapped control and retain reviewed evidence",
+      "applicable": 1,
+      "clause_ref": "System and Communication Protection para 4(b) (section-local numbering)",
+      "reference_source": "https://pkcert.gov.pk/uploads/2026/03/PISF-Merged-Version.pdf",
+      "source": "Official source consulted 2026-11-22; scoped mapping"
+    },
+    {
+      "id": "FINAL-PISF-NET-4D",
+      "framework": "PISF 2026",
+      "requirement": "Protected remote connectivity",
+      "purpose": "Voluntary project benchmark; confirm legal entity/CII scope",
+      "status": null,
+      "gap": "Operating evidence not assessed",
+      "recommendation": "Test mapped control and retain reviewed evidence",
+      "applicable": 1,
+      "clause_ref": "System and Communication Protection para 4(d) (section-local numbering)",
+      "reference_source": "https://pkcert.gov.pk/uploads/2026/03/PISF-Merged-Version.pdf",
+      "source": "Official source consulted 2026-11-22; scoped mapping"
+    },
+    {
+      "id": "FINAL-PISF-IAM-5",
+      "framework": "PISF 2026",
+      "requirement": "Strong authentication",
+      "purpose": "Voluntary project benchmark; confirm legal entity/CII scope",
+      "status": null,
+      "gap": "Operating evidence not assessed",
+      "recommendation": "Test mapped control and retain reviewed evidence",
+      "applicable": 1,
+      "clause_ref": "Identity and Access Management para 5 (section-local numbering)",
+      "reference_source": "https://pkcert.gov.pk/uploads/2026/03/PISF-Merged-Version.pdf",
+      "source": "Official source consulted 2026-11-22; scoped mapping"
+    },
+    {
+      "id": "FINAL-PISF-IAM-7",
+      "framework": "PISF 2026",
+      "requirement": "Access review",
+      "purpose": "Voluntary project benchmark; confirm legal entity/CII scope",
+      "status": null,
+      "gap": "Operating evidence not assessed",
+      "recommendation": "Test mapped control and retain reviewed evidence",
+      "applicable": 1,
+      "clause_ref": "Identity and Access Management para 7 (section-local numbering)",
+      "reference_source": "https://pkcert.gov.pk/uploads/2026/03/PISF-Merged-Version.pdf",
+      "source": "Official source consulted 2026-11-22; scoped mapping"
+    },
+    {
+      "id": "FINAL-PISF-IAM-8",
+      "framework": "PISF 2026",
+      "requirement": "Least privilege",
+      "purpose": "Voluntary project benchmark; confirm legal entity/CII scope",
+      "status": null,
+      "gap": "Operating evidence not assessed",
+      "recommendation": "Test mapped control and retain reviewed evidence",
+      "applicable": 1,
+      "clause_ref": "Identity and Access Management para 8 (section-local numbering)",
+      "reference_source": "https://pkcert.gov.pk/uploads/2026/03/PISF-Merged-Version.pdf",
+      "source": "Official source consulted 2026-11-22; scoped mapping"
+    },
+    {
+      "id": "FINAL-PISF-LOG-8",
+      "framework": "PISF 2026",
+      "requirement": "Protected centralized logs",
+      "purpose": "Voluntary project benchmark; confirm legal entity/CII scope",
+      "status": null,
+      "gap": "Operating evidence not assessed",
+      "recommendation": "Test mapped control and retain reviewed evidence",
+      "applicable": 1,
+      "clause_ref": "System and Communication Protection para 8 (section-local numbering)",
+      "reference_source": "https://pkcert.gov.pk/uploads/2026/03/PISF-Merged-Version.pdf",
+      "source": "Official source consulted 2026-11-22; scoped mapping"
+    },
+    {
+      "id": "FINAL-PISF-REC-10",
+      "framework": "PISF 2026",
+      "requirement": "Approved recovery objectives",
+      "purpose": "Voluntary project benchmark; confirm legal entity/CII scope",
+      "status": null,
+      "gap": "Operating evidence not assessed",
+      "recommendation": "Test mapped control and retain reviewed evidence",
+      "applicable": 1,
+      "clause_ref": "System and Communication Protection para 10 (section-local numbering)",
+      "reference_source": "https://pkcert.gov.pk/uploads/2026/03/PISF-Merged-Version.pdf",
+      "source": "Official source consulted 2026-11-22; scoped mapping"
+    },
+    {
+      "id": "FINAL-PISF-REC-12",
+      "framework": "PISF 2026",
+      "requirement": "Restoration testing",
+      "purpose": "Voluntary project benchmark; confirm legal entity/CII scope",
+      "status": null,
+      "gap": "Operating evidence not assessed",
+      "recommendation": "Test mapped control and retain reviewed evidence",
+      "applicable": 1,
+      "clause_ref": "System and Communication Protection para 12 (section-local numbering)",
+      "reference_source": "https://pkcert.gov.pk/uploads/2026/03/PISF-Merged-Version.pdf",
+      "source": "Official source consulted 2026-11-22; scoped mapping"
+    }
+  ],
+  "compliance_controls": [
+    {
+      "requirement_id": "FINAL-PISF-NET-4B",
+      "control_id": "C04"
+    },
+    {
+      "requirement_id": "FINAL-PISF-NET-4D",
+      "control_id": "C06"
+    },
+    {
+      "requirement_id": "FINAL-PISF-IAM-5",
+      "control_id": "C10"
+    },
+    {
+      "requirement_id": "FINAL-PISF-IAM-7",
+      "control_id": "C10"
+    },
+    {
+      "requirement_id": "FINAL-PISF-IAM-8",
+      "control_id": "C09"
+    },
+    {
+      "requirement_id": "FINAL-PISF-LOG-8",
+      "control_id": "C15"
+    },
+    {
+      "requirement_id": "FINAL-PISF-REC-10",
+      "control_id": "C14"
+    },
+    {
+      "requirement_id": "FINAL-PISF-REC-12",
+      "control_id": "C14"
+    }
+  ]
+}

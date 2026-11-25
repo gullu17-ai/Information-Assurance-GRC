@@ -1,0 +1,439 @@
+{
+  "iam_roles": [
+    {
+      "role": "Spectator",
+      "permissions": "Ticket account, mobile app, public Wi-Fi",
+      "restriction": "No staff or internal access",
+      "source": "A3 PDF pp. 4–5"
+    },
+    {
+      "role": "Event Staff",
+      "permissions": "Shift tools and assigned event applications",
+      "restriction": "No admin, finance, BMS or CCTV administration",
+      "source": "A3 PDF pp. 4–5"
+    },
+    {
+      "role": "Security Staff",
+      "permissions": "CCTV viewing, incident reporting and access-control operations",
+      "restriction": "No configuration without approval",
+      "source": "A3 PDF pp. 4–5"
+    },
+    {
+      "role": "Stadium Operations",
+      "permissions": "Turnstile status, event-control tools and signage",
+      "restriction": "Event-required operational functions only",
+      "source": "A3 PDF pp. 4–5"
+    },
+    {
+      "role": "Facilities / OT Engineer",
+      "permissions": "BMS, selected IoT and maintenance consoles",
+      "restriction": "No spectator database or finance",
+      "source": "A3 PDF pp. 4–5"
+    },
+    {
+      "role": "Finance / Commercial",
+      "permissions": "POS reporting, finance and vendor settlement",
+      "restriction": "No OT or CCTV administration",
+      "source": "A3 PDF pp. 4–5"
+    },
+    {
+      "role": "SOC Analyst",
+      "permissions": "SIEM, security logs and investigation tools",
+      "restriction": "Read/response only. No routine business-data changes.",
+      "source": "A3 PDF pp. 4–5"
+    },
+    {
+      "role": "IT Administrator",
+      "permissions": "Server, cloud, network and identity administration",
+      "restriction": "Separate privileged account",
+      "source": "A3 PDF pp. 4–5"
+    },
+    {
+      "role": "Vendor / Contractor",
+      "permissions": "Contracted system for a fixed period",
+      "restriction": "Owner approval, time limit and logging",
+      "source": "A3 PDF pp. 4–5"
+    }
+  ],
+  "iam_permissions": [
+    {
+      "policy": "Vendor remote access",
+      "context": "PASS sponsor, stated purpose and expiry, MFA and approved VPN/gateway",
+      "outcome": "Limit to contracted scope, log critical access and disable when work ends.",
+      "source": "A3 PDF pp. 4–6 (contextual interpretation)"
+    },
+    {
+      "policy": "Privileged changes",
+      "context": "Separate authorized admin account with MFA even on the internal network",
+      "outcome": "Scope access to assigned systems and log changes to SOC/SIEM.",
+      "source": "A3 PDF pp. 4–6 (contextual interpretation)"
+    },
+    {
+      "policy": "Event staff",
+      "context": "Assigned event and approved event period",
+      "outcome": "Limit to assigned apps and review before and after each event.",
+      "source": "A3 PDF pp. 4–6 (contextual interpretation)"
+    },
+    {
+      "policy": "Spectator step-up",
+      "context": "Sensitive activity on spectator account",
+      "outcome": "Require additional authentication.",
+      "source": "A3 PDF pp. 4–6 (contextual interpretation)"
+    },
+    {
+      "policy": "Separation of duties",
+      "context": "Routine work versus elevated administration",
+      "outcome": "Separate accounts and require authorization for critical changes.",
+      "source": "A3 PDF pp. 4–6 (contextual interpretation)"
+    }
+  ],
+  "access_reviews": [
+    {
+      "account": "Privileged/admin",
+      "frequency": "Monthly",
+      "owner": "CISO / system owner",
+      "source": "A3 PDF p. 5"
+    },
+    {
+      "account": "Permanent employee",
+      "frequency": "Quarterly",
+      "owner": "Department manager + system owner",
+      "source": "A3 PDF p. 5"
+    },
+    {
+      "account": "Temporary event staff",
+      "frequency": "Before and after each event period",
+      "owner": "Operations / HR",
+      "source": "A3 PDF p. 5"
+    },
+    {
+      "account": "Vendor/contractor",
+      "frequency": "Before each approved window and monthly for long contracts",
+      "owner": "System owner + IT/Security",
+      "source": "A3 PDF p. 5"
+    },
+    {
+      "account": "Dormant or leaver",
+      "frequency": "Disable immediately when confirmed",
+      "owner": "HR + IT/IAM",
+      "source": "A3 PDF p. 5"
+    }
+  ],
+  "data_inventory": [
+    {
+      "name": "Public announcements, stadium layout, event schedules and ticket terms",
+      "classification": "Public",
+      "access": "Approved external sharing",
+      "encryption": null,
+      "retention": null,
+      "handling": "Preserve integrity and obtain normal approval.",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Internal notices, staff procedures, meeting minutes and employee contacts",
+      "classification": "Internal",
+      "access": "Staff only",
+      "encryption": null,
+      "retention": null,
+      "handling": "Store on approved PASS systems.",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Network diagrams, vendor pricing and contracts, HR records and incident notes",
+      "classification": "Confidential",
+      "access": "Need-to-know and authenticated storage",
+      "encryption": "Encrypt when sent externally",
+      "retention": null,
+      "handling": "Restrict storage and protect external transfer.",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "CCTV footage, access logs, payment documents, investigative evidence and spectator information",
+      "classification": "Restricted",
+      "access": "Strong access control and logging",
+      "encryption": "Required",
+      "retention": "Limited retention. Exact period TODO.",
+      "handling": "Approved sharing only.",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Core network configs, backup keys, BMS settings, IAM admin secrets and DR credentials",
+      "classification": "Critical",
+      "access": "Very limited privileged access and MFA",
+      "encryption": "Required",
+      "retention": null,
+      "handling": "Monitor and maintain protected backups and recovery copies.",
+      "source": "A3 PDF pp. 6–7"
+    }
+  ],
+  "bcdr_services": [
+    {
+      "asset_id": "A01",
+      "service": "Smart Turnstile & Entry System",
+      "criticality": 5,
+      "rto": "15 min",
+      "rpo": "5 min",
+      "priority": 2,
+      "business_impact": "Entry queues and crowd pressure grow quickly.",
+      "source": "A3 PDF pp. 7–8"
+    },
+    {
+      "asset_id": "A04",
+      "service": "Ticket & Spectator Database",
+      "criticality": 5,
+      "rto": "30 min",
+      "rpo": "15 min",
+      "priority": 2,
+      "business_impact": "Ticket validation and account records depend on the database.",
+      "source": "A3 PDF pp. 7–8"
+    },
+    {
+      "asset_id": "A09",
+      "service": "Internal Stadium Network",
+      "criticality": 5,
+      "rto": "30 min",
+      "rpo": "4 hr config",
+      "priority": 1,
+      "business_impact": "Core services depend on connectivity.",
+      "source": "A3 PDF pp. 7–8"
+    },
+    {
+      "asset_id": "A13",
+      "service": "Employee IAM",
+      "criticality": 5,
+      "rto": "30 min",
+      "rpo": "15 min",
+      "priority": 1,
+      "business_impact": "Staff and administrators need authentication.",
+      "source": "A3 PDF pp. 7–8"
+    },
+    {
+      "asset_id": "A06",
+      "service": "CCTV & Video Analytics",
+      "criticality": 5,
+      "rto": "30 min",
+      "rpo": "5 min",
+      "priority": 3,
+      "business_impact": "Live-event security monitoring is impaired.",
+      "source": "A3 PDF pp. 7–8"
+    },
+    {
+      "asset_id": "A07",
+      "service": "Building Management System",
+      "criticality": 5,
+      "rto": "30 min",
+      "rpo": "15 min",
+      "priority": 3,
+      "business_impact": "HVAC, lighting and facility control affect safe operations.",
+      "source": "A3 PDF pp. 7–8"
+    },
+    {
+      "asset_id": "A02",
+      "service": "Online Ticketing Platform",
+      "criticality": 4,
+      "rto": "1 hr",
+      "rpo": "15 min",
+      "priority": 4,
+      "business_impact": "Sales and retrieval are affected. Controlled fallback is possible.",
+      "source": "A3 PDF pp. 7–8"
+    },
+    {
+      "asset_id": "A15",
+      "service": "SOC / SIEM",
+      "criticality": 4,
+      "rto": "1 hr",
+      "rpo": "15 min",
+      "priority": null,
+      "business_impact": "Security monitoring must return quickly.",
+      "source": "A3 PDF pp. 7–8"
+    },
+    {
+      "asset_id": "A16",
+      "service": "AI Crowd Prediction",
+      "criticality": 4,
+      "rto": "2 hr",
+      "rpo": "30 min",
+      "priority": 5,
+      "business_impact": "Direct CCTV and manual assessment are temporary substitutes.",
+      "source": "A3 PDF pp. 7–8"
+    },
+    {
+      "asset_id": "A10",
+      "service": "Public Wi-Fi",
+      "criticality": 3,
+      "rto": "8 hr",
+      "rpo": "N/A",
+      "priority": 5,
+      "business_impact": "Useful to spectators with lower priority for stadium safety.",
+      "source": "A3 PDF pp. 7–8"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "IR01",
+      "risk_id": "R11",
+      "name": "Ransomware during a sold-out stadium event",
+      "severity": "Critical",
+      "affected_assets": "Office endpoints, shared files and ticketing support. Verify turnstile and BMS exposure.",
+      "owner": "CISO (response lead per A1); SOC coordinates triage",
+      "status": "Simulated scenario",
+      "source": "A1 PDF p. 4; A3 PDF pp. 9–10"
+    }
+  ],
+  "incident_stages": [
+    {
+      "stage": "Preparation",
+      "action": "Maintain contacts, backups, SIEM intake, ticket fallback, MFA and awareness.",
+      "evidence": "Checklist, contact list, backup report",
+      "source": "A3 PDF pp. 9–11"
+    },
+    {
+      "stage": "Detection",
+      "action": "Correlate admin logins, user reports and endpoint changes. Notify Stadium Operations.",
+      "evidence": "IAM/SIEM alerts and endpoint telemetry",
+      "source": "A3 PDF pp. 9–11"
+    },
+    {
+      "stage": "Analysis",
+      "action": "Scope accounts and systems, check OT exposure and possible data loss.",
+      "evidence": "Endpoint, IAM, firewall, VPN, server and cloud logs",
+      "source": "A3 PDF pp. 9–11"
+    },
+    {
+      "stage": "Containment",
+      "action": "Isolate affected IT endpoints, disable compromised sessions, coordinate safety-system protection and use ticket fallback as needed.",
+      "evidence": "Forensic images and decision record",
+      "source": "A3 PDF pp. 9–11"
+    },
+    {
+      "stage": "Eradication",
+      "action": "Rebuild affected hosts, patch gaps, rotate affected credentials and verify other systems.",
+      "evidence": "Rebuild and patch records",
+      "source": "A3 PDF pp. 9–11"
+    },
+    {
+      "stage": "Recovery",
+      "action": "Restore identity and network first, then service priorities. Monitor and use DR if needed.",
+      "evidence": "Restore record, measured downtime and data loss",
+      "source": "A3 PDF pp. 9–11"
+    },
+    {
+      "stage": "Lessons Learned",
+      "action": "Review detection, MFA, segmentation, recovery and communication. Assign fixes and deadlines.",
+      "evidence": "After-action report and action tracker",
+      "source": "A3 PDF pp. 9–11"
+    }
+  ],
+  "soc_sources": [
+    {
+      "source_name": "Endpoint / EDR",
+      "purpose": "Detect suspicious endpoint behavior.",
+      "source": "A1 PDF pp. 11–12; A3 PDF pp. 9–11 (proposed)"
+    },
+    {
+      "source_name": "IAM",
+      "purpose": "Track authentication and privilege events.",
+      "source": "A1 PDF pp. 11–12; A3 PDF pp. 9–11 (proposed)"
+    },
+    {
+      "source_name": "Firewall / network",
+      "purpose": "Review cross-boundary activity and isolation.",
+      "source": "A1 PDF pp. 11–12; A3 PDF pp. 9–11 (proposed)"
+    },
+    {
+      "source_name": "VPN / gateway",
+      "purpose": "Review remote access and vendor windows.",
+      "source": "A1 PDF pp. 11–12; A3 PDF pp. 9–11 (proposed)"
+    },
+    {
+      "source_name": "Server",
+      "purpose": "Track infrastructure and application activity.",
+      "source": "A1 PDF pp. 11–12; A3 PDF pp. 9–11 (proposed)"
+    },
+    {
+      "source_name": "Cloud",
+      "purpose": "Track administrator and configuration changes.",
+      "source": "A1 PDF pp. 11–12; A3 PDF pp. 9–11 (proposed)"
+    },
+    {
+      "source_name": "OT / BMS where safely supported",
+      "purpose": "Monitor maintenance and available zone telemetry.",
+      "source": "A1 PDF pp. 11–12; A3 PDF pp. 9–11 (proposed)"
+    }
+  ],
+  "ai_systems": [
+    {
+      "asset_id": "A16",
+      "system": "AI Video Analytics & Crowd Prediction System",
+      "owner": "Head of Physical Security / Data Science",
+      "purpose": "Support crowd monitoring and prediction",
+      "data_used": "Video and crowd signals. CCTV footage is Restricted.",
+      "ai_risk": "R16: manipulated or drifted inputs can produce wrong guidance.",
+      "oversight": "Review safety-related output. Use direct CCTV/manual assessment as fallback.",
+      "privacy": "Restricted footage handling, encryption, logging and approved sharing.",
+      "monitoring": "Input validation, drift monitoring and model review proposed.",
+      "incident_handling": "TODO",
+      "governance_status": "Non-Compliant (A2 AI RMF heat map)",
+      "source": "A1 PDF pp. 6, 9, 11; A2 PDF pp. 4, 6–8; A3 PDF pp. 6–8"
+    }
+  ],
+  "maturity_scores": [
+    {
+      "dimension": "Governance",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    },
+    {
+      "dimension": "Risk Management",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    },
+    {
+      "dimension": "IAM",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    },
+    {
+      "dimension": "Data Protection",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    },
+    {
+      "dimension": "Incident Response",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    },
+    {
+      "dimension": "BC/DR",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    },
+    {
+      "dimension": "AI Governance",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    },
+    {
+      "dimension": "OT Security",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    },
+    {
+      "dimension": "Supply Chain",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    },
+    {
+      "dimension": "Audit",
+      "source": "Plan PDF p. 8 (dimensions only)"
+    }
+  ],
+  "roadmap": [
+    {
+      "year": 1,
+      "phase": "Foundation",
+      "source": "Plan PDF pp. 8–9 (headings only)"
+    },
+    {
+      "year": 2,
+      "phase": "Integration",
+      "source": "Plan PDF pp. 8–9 (headings only)"
+    },
+    {
+      "year": 3,
+      "phase": "Optimization",
+      "source": "Plan PDF pp. 8–9 (headings only)"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "risk_rationales": [
+    {
+      "risk_id": "R01",
+      "likelihood_basis": "Public ticketing is exposed during predictable demand peaks.",
+      "impact_basis": "Customers may lose ticket access and support/revenue may be affected. Prepared fallback is possible.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R02",
+      "likelihood_basis": "Digital tickets are targeted for copying, sharing and resale abuse. Offline or rushed checks are susceptible.",
+      "impact_basis": "Gate crowding, revenue loss and disputes.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R03",
+      "likelihood_basis": "Payment systems are attractive targets but are more restricted than typical office computers.",
+      "impact_basis": "Payment exposure, interrupted sales and contractual or compliance consequences.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R04",
+      "likelihood_basis": "Multiple device types, temporary connections and vendors make configuration errors realistic.",
+      "impact_basis": "Guest access can reach critical operational services.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R05",
+      "likelihood_basis": "Many cameras and remote administration points broaden the exposure.",
+      "impact_basis": "Footage can be exposed and security monitoring impaired during an event.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R06",
+      "likelihood_basis": "Legacy components and vendor access create exposure within the controlled network.",
+      "impact_basis": "Manipulated ventilation or lighting can create serious safety and operations consequences.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R07",
+      "likelihood_basis": "Devices from different vendors may have weak authentication or firmware.",
+      "impact_basis": "Wrong crowd or facility data can cause poor operational decisions.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R08",
+      "likelihood_basis": "Signage controllers may be remotely managed and use shared accounts.",
+      "impact_basis": "False or offensive content can disrupt the event and damage reputation.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R09",
+      "likelihood_basis": "Frequent changes and human configuration errors are realistic.",
+      "impact_basis": "Exposed permissions or storage can leak data and disrupt digital services.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R10",
+      "likelihood_basis": "Administrators are targeted by phishing, stolen credentials and token theft.",
+      "impact_basis": "One privileged account can reach multiple systems and disable controls.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R11",
+      "likelihood_basis": "Many endpoints, email accounts and remote connections create multiple entry paths.",
+      "impact_basis": "A single event can affect ticketing, office IT, stadium operations and recovery.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R12",
+      "likelihood_basis": "Valuable records connect to public ticketing and mobile services.",
+      "impact_basis": "Personal-data disclosure can lead to legal, financial and reputational harm.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R13",
+      "likelihood_basis": "PASS relies on vendors whose security it cannot fully control.",
+      "impact_basis": "Trusted vendor access or update channels can reach important systems.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R14",
+      "likelihood_basis": "Attackers with administrative access often target backups.",
+      "impact_basis": "Recovering core services takes longer and can affect future events.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R15",
+      "likelihood_basis": "Multiple vendors and systems increase logging gaps and misconfiguration.",
+      "impact_basis": "Attacks continue longer before detection, increasing harm.",
+      "source": "A1 PDF pp. 9–11"
+    },
+    {
+      "risk_id": "R16",
+      "likelihood_basis": "Limited monitoring makes spoofed input and undetected drift realistic.",
+      "impact_basis": "Wrong estimates can lead to under- or over-reaction to crowd conditions.",
+      "source": "A1 PDF pp. 9–11"
+    }
+  ]
+}

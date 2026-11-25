@@ -1,0 +1,487 @@
+<PARSED TEXT FOR PAGE: 1 / 13>
+                         CY3003
+       Information Assurance
+
+                   Assignment 01
+              Smart Sports Stadium
+
+
+
+
+Submitted by: Roshni Fawad, Anum Ali, Furqan Haider,
+Muhammad Abdullah, Aatif Ali Khan
+Roll number: 23I-2107, 23i-2089, 23i-2123, 23i-2064, 23i-
+2120
+Date: September 12, 2026
+<PARSED TEXT FOR PAGE: 2 / 13>
+Table of Contents
+1. Introduction
+2. Organization Profile
+3. Governance Structure
+4. Asset Inventory
+5. Threat and Vulnerability Analysis
+6. Risk Assessment Method
+7. Risk Register
+8. Likelihood and Impact Justification
+9. Key Findings and Priorities
+10. Connection to Later IA Deliverables
+11. Summary
+
+
+
+
+1. Introduction
+This assignment actually builds the foundation for the Information Assurance work on a Smart Sports
+Stadium. The selected organization is hypothetical venue called PakArena Smart Stadium (PASS). The
+connected systems are used by stadium for ticketing, crowd management, physical access, payments,
+surveillance, building operations and event services. Because these connected systems are linked together.
+A cyber problem can quickly become an operational or even a public-safety problem.
+The aim of this report is to understand the organization before selecting detailed security controls. It
+identifies who is responsible for security and operations and lists the main assets and records realistic
+threats and vulnerabilities. The final part uses a simple likelihood into impact method to rate 16 major
+risks. This gives the organization a clear starting point for the later work on the policies and controls,
+compliance, audit, identity and access management and privacy, business continuity, incident response
+and emerging technology risks.
+
+2. Organization Profile
+2.1 Organization Overview
+The PakArena Smart Stadium (PASS) is a hypothetical sports and entertainment stadium it is
+also multi-purposed staduim and is located in Pakistan. It hosts football and cricket matches,
+concerts, ceremonies and other large events. The stadium venue is designed exaclty as a “smart
+stadium” which means it support many of the stadium services digitally using cloud, IoT and
+other digital operational technology systems instead of managing all these services by manual
+processes.
+The PakArena Smart Stadium PASS crrently operates with the following profile:
+<PARSED TEXT FOR PAGE: 3 / 13>
+     45,000 spectators can roughly fit in here
+     350 parmanent staff members approximately and during the peak event times other staff
+      members are temporary hired which are roughly 1,200 members
+     Android application which will provide online ticketing services by issueing QR code.
+     For the public and staff entrace the smart turnstiles and electronic access control gates are
+      installed
+     Public WiFi service is available for spectators and also seperate wifi network is available
+      for staff and stadium operations
+     For crowd monitoring CCTV cameras are installed and these cameras are equipped with
+      video analytics to support security
+     For advertisement Digital scoreboards, LED advertising boards and passenger style
+      information displays are installed throughout the venue at the best place
+     Point of sale terminals handle food, merchandise, and other transactions.
+     A system called Building Management System (BMS) is made which overseeing HVAC,
+      lighting and energy monitoring
+     Many IoT sensors are installed for tracking crowd density, temperature and also for
+      checking equipment status and certain other facility conditions
+     Services like ticketing, mobile application and analytics and other business application
+      services are all cloud hosted
+     For monitoring the cyber alerts a Security Operations Center SOC is employed
+     For delivering tickets and payment processes and most importantly the internet
+      connectivity, maintenance and other event technology services are mostly provided by
+      thirs party
+
+2.2 Main Business and Operational Services
+Service Area         What it Supports
+
+Spectator Services  Ticket purchase, mobile tickets, entry validation, public Wi-Fi, event
+                    information and customer support.
+Event Operations    Event scheduling, scoreboard operations, digital signage, venue
+                    coordination and control-room activities.
+Safety and Security CCTV monitoring, access control, emergency coordination, incident
+                    reporting and crowd monitoring.
+Facilities and      HVAC, lighting, power monitoring, BMS, maintenance systems and IoT
+Engineering         facility sensors.
+Commercial Services Food and merchandise payments, POS terminals, vendor systems and
+                    advertising displays.
+Corporate Services Email, HR, finance, employee accounts, procurement and document
+                    storage.
+<PARSED TEXT FOR PAGE: 4 / 13>
+3. Governance Structure
+Governance actually explains that who will make decisions and who will be accountable when
+things goes wrong. In this smart stadium, IT teams alone cannot manage all the risks because
+many of the systems are connected to each other like physical safety, crowd movement, facility
+operations and third-party vendors are all connected. So shared governance model is used in the
+PASS.
+3.1 Key Governance Roles and Responsibilities
+Role                         Main Responsibility
+
+Board / Stadium Owners      Approve major strategy, risk appetite, large security investments
+                            and high-level policies.
+Chief Executive Officer /   Overall accountability for stadium operations, business continuity
+General Manager             and major decisions.
+Chief Information Officer Owns enterprise IT, cloud platforms, business applications,
+(CIO)                       networks and technology planning.
+Chief Information Security Leads cybersecurity policy, risk management, security monitoring,
+Officer (CISO)              incident response and security awareness.
+Stadium Operations          Owns event-day operations, venue control room, spectator services
+Director                    and coordination between technical teams.
+Facilities / OT Engineering Owns BMS, smart lighting, selected IoT devices, power
+Manager                     monitoring and technical maintenance.
+Head of Physical Security Owns CCTV operations, guard coordination, access-control
+                            procedures and emergency security response.
+Risk and Compliance         Reviews major risks, treatment decisions, legal obligations and
+Committee                   accepted exceptions.
+Data Protection / Privacy   Oversees personal-data handling, privacy concerns and retention of
+Officer                     visitor, employee and video data.
+Internal Audit              Independently checks whether controls and procedures are working
+                            as expected.
+SOC / Security Team         Monitors alerts, reviews logs, investigates suspicious activity and
+                            supports incident response.
+Business and System         Accept day-to-day responsibility for the systems they use and help
+Owners                      decide acceptable downtime and security needs.
+Third-Party Vendors         Provide contracted services but must follow agreed security, access
+                            and reporting requirements.
+
+
+3.2 Simplified Reporting Structure
+
+     Board / Stadium Owners: CEO / General Manager
+<PARSED TEXT FOR PAGE: 5 / 13>
+       CEO: CIO, CISO, Stadium Operations Director, Facilities/OT Engineering, Head of
+        Physical Security, Risk & Compliance
+       CIO: IT infrastructure, applications, cloud and network teams
+       CISO: SOC, security engineering, incident response and security governance
+       Operations Director: event control room, venue operations and business service owners
+
+Internal Audit reports to senior leadership independently / the Board rather than to the teams
+being audited.
+3.3 Why This Governance Fits a Smart Stadium
+In our stadium normal business IT prectices are mixed and used with systems that directly affect
+the people in physical venue. Now for example, mainly service problem involves unavailability
+of tickting website but when a smart turnstile system is failed that will cause serious issue
+because of genuine crowd pressure. So for this reason, we don’t treat these risks only as IT issues
+which touches the building systems , access control or crowd monitoring which are shared with
+operations, engineering and physical security.
+
+4. Asset Inventory
+The systems and informationare listed in asset inventory on which PASS depends on. Criticality
+is scored from 1 to 5. A score of 5 means the asset is essential for the safety, core operations or
+sensitive information; 1 means that the effect of the loss would be limited.
+ID           Asset                      Owner                    Type              Criticality
+
+A01          Smart Turnstile & Entry Stadium Operations          OT / Access       5
+             System                                              System
+A02          Online Ticketing Platform Commercial / CIO          Web / Cloud       4
+                                                                 Application
+A03          Mobile Stadium           Digital Services           Mobile      3
+             Application                                         Application
+A04          Ticket & Spectator       Data Owner / CIO           Data        5
+             Database
+A05          Payment / POS            Finance / Commercial Payment System 4
+             Environment
+A06          CCTV & Video Analytics Head of Physical          Security / IoT 5
+                                      Security
+A07          Building Management      Facilities /            OT / Building  5
+             System (BMS)             Engineering             System
+A08          IoT Crowd & Facility     Facilities / Operations IoT            4
+             Sensors
+A09          Internal Stadium Network CIO / Network Team Network             5
+<PARSED TEXT FOR PAGE: 6 / 13>
+A10          Public Wi-Fi Network          CIO / Network Team Network                     3
+
+A11          Digital Scoreboard &          Event Operations           AV / IoT            4
+             Signage
+A12          Cloud Infrastructure          CIO                        Cloud               4
+
+A13          Employee Identity &           CISO / IT                  IAM                 5
+             Access System
+A14          Backup & Recovery             CIO / IT                   Infrastructure      5
+             Platform
+A15          SOC / SIEM Platform           CISO                       Security System 4
+
+A16          AI Video Analytics &    Head of Physical                 AI                  4
+             Crowd Prediction System Security / Data
+                                     Science
+
+
+4.1 Critical Asset Notes
+The highest criticality has given to turnstile system, the spectator database and CCTV, BMS, internal
+network, identity system and backup platform. So these assets either support safe stadium operation,
+contain sensitive information or they are needed to restore the other systems after the incident. Public Wi-
+Fi network is still important no doubt but it is loss would normally cause the less damage than the loss of
+access control or the core operational systems. From CCTV the AI video analytics and crowd prediction
+system is rated separately because it has important job which is making automated decisions about the
+crowd risk. And if its outputs are manipulated or staff trusted blindly on the oputputs then staff may
+misjudge the crowd safety even while the underlying cameras keep working.
+
+5. Threat and Vulnerability Analysis
+We know threat couses the harm but the vulnerability is the weakness that make the threat easier
+to succeed. The common stadium threats is linked to realistic weaknesses in the selected
+environment in following table.
+ID         Threat                   Affected Asset      Key Vulnerability
+
+T01        DDoS against       Online Ticketing Internet-facing service with limited traffic
+           ticketing          Platform           filtering or scaling.
+T02        Fake or reused     Smart Turnstiles / Weak QR validation, offline validation gaps
+           digital tickets    Ticketing          or poor anti-replay checks.
+T03        Payment malware or Payment / POS Outdated terminals, weak segmentation or
+           POS compromise                        excessive vendor access.
+T04        Unauthorized       Internal Network Weak separation between public, staff and
+           network access                        operational networks.
+T05        CCTV account       CCTV / Video       Default credentials, weak MFA, exposed
+           compromise         Analytics          management interface or outdated firmware.
+<PARSED TEXT FOR PAGE: 7 / 13>
+T06       BMS manipulation      BMS          Legacy protocols, remote maintenance access
+                                             or weak network isolation.
+T07       False IoT sensor    IoT Sensors    Weak device authentication, insecure
+          readings                           firmware or unencrypted traffic.
+T08       Digital signage     Scoreboard /   Shared admin accounts, exposed control
+          takeover            Signage        panel or weak change control.
+T09       Cloud data exposure Cloud          Misconfigured storage, excessive permissions
+                              Infrastructure or leaked API keys.
+T10       Privileged account IAM             Weak MFA, password reuse, phishing or
+          theft                              excessive privileges.
+T11       Ransomware          Core IT /      Unpatched systems, phishing exposure and
+                              Operations     broad internal access.
+T12       Spectator data      Spectator      Application flaws, poor access control or
+          breach              Database       insecure exports.
+T13       Third-party         Vendor-managed Over-privileged vendor accounts or weak
+          compromise          systems        supplier security checks.
+T14       Backup loss during Backup Platform Backups reachable from production accounts
+          incident                           or no immutable copy.
+T15       Security monitoring SOC / SIEM     Missing logs, poor time synchronization,
+          failure                            weak alert coverage or storage exhaustion.
+T16       AI model            AI Video       Adversarial or spoofed video input, lack of
+          manipulation        Analytics      model-drift monitoring, or over-trust in
+                                             automated crowd-risk output.
+
+
+
+6. Risk Assessment Method
+For Assignment 1, PASS uses a simple 5 × 5 risk model. So this is keeping the scores easy to
+explain and to makes it possible to compare very different risks using one method.
+6.1 Risk Formula
+Risk Score = Likelihood × Impact
+6.2 Likelihood Scale
+Score              Rating             Meaning
+
+1                  Rare               Would only happen in unusual conditions.
+
+2                  Unlikely           Possible, but there are few clear opportunities.
+
+3                  Possible           Could realistically happen during normal operations.
+
+4                  Likely             The threat has several realistic paths and is expected to
+                                      occur at some point.
+<PARSED TEXT FOR PAGE: 8 / 13>
+5                  Almost Certain     Expected frequently or already seen repeatedly in similar
+                                      environments.
+
+
+6.3 Impact Scale
+Score       Rating              Meaning
+
+1           Insignificant       Little disruption and no sensitive data or safety effect.
+
+2           Minor               Small, short-lived service impact.
+
+3           Moderate            Noticeable outage, limited data loss or moderate
+                                financial/reputation effect.
+4           Major               Major service disruption, significant data exposure, financial
+                                loss or event impact.
+5           Severe              Could affect public safety, stop major event operations, expose
+                                highly sensitive data or cause serious legal/financial harm.
+
+
+6.4 Risk Rating Bands
+Score                Level                 Meaning
+
+1-4                  Low                   Manage through normal controls and monitoring.
+
+5-9                  Medium                Needs planned controls and owner review.
+
+10-16                High                  Needs priority treatment and management attention.
+
+17-25                Critical              Needs urgent treatment, strong oversight and clear
+                                           ownership.
+
+
+
+7. Risk Register
+ID      Asset          Risk Event                           L        I      Score      Level
+
+R01     Online         DDoS makes ticket sales         4             4      16         High
+        Ticketing      unavailable
+R02     Smart          Fake/replayed QR tickets allow  3             4      12         High
+        Turnstiles     unauthorized entry
+R03     Payment /      POS malware steals payment data 3             4      12         High
+        POS
+R04     Internal       Public/guest network access          3        5      15         High
+        Network        reaches internal systems
+<PARSED TEXT FOR PAGE: 9 / 13>
+R05      CCTV        Unauthorized access to live or      3           4      12         High
+                     recorded video
+R06      BMS         Attacker changes HVAC/lighting 3                5      15         High
+                     controls during an event
+R07      IoT Sensors False crowd or facility sensor data 3           4      12         High
+                     is accepted
+R08      Digital     Scoreboard/LED displays are         3           3      9          Medium
+         Signage     taken over
+R09      Cloud       Misconfiguration exposes stored 3               4      12         High
+                     data or services
+R10      IAM         Privileged employee account is      4           5      20         Critical
+                     compromised
+R11      Core IT /   Ransomware interrupts stadium       4           5      20         Critical
+         Operations operations
+R12      Spectator   Personal information is stolen      4           5      20         Critical
+         Database
+R13      Third-Party Vendor compromise creates a path 3              5      15         High
+         Services    into stadium systems
+R14      Backups     Backups are encrypted/deleted       3           5      15         High
+                     with production systems
+R15      SOC / SIEM Important attack activity is not     3           4      12         High
+                     logged or alerted
+R16      AI Video    AI crowd-prediction model is fed 3              4      12         High
+         Analytics   manipulated or drifted input and
+                     gives wrong guidance
+
+
+7.1 Overall Risk Picture
+These three risks “privileged account compromise, ransomware, and a breach of the spectator
+database” receives the critical rating. Risks are rated highest because of having realistic attack
+paths and they can easilty affect many systems or large personal information. As smart stadium
+depends on connected services thats why most of the risk are high. The Digital signage takeover
+is Medium because digital signage could damage the event experience and reputation but it is
+surely less likely to stop core stadium operations or to create the same level of the safety impact
+as BMS or network incident by itself.
+
+8. Likelihood and Impact Justification
+R01 - Ticketing DDoS
+Likelihood 4: Ticketing platform is public and it is exposed when popular event is happening and
+before it, when the attackers also know that the demand is high. Impact 4: Customers can may be
+unable to buy or retrieve the tickets or support lines may be overloaded and also revenue can be
+lost. It is serious but fallback processes can still be used by event if properly prepared.
+<PARSED TEXT FOR PAGE: 10 / 13>
+R02 - Fake or Replayed Tickets
+Likelihood 3: Digital tickets are common targets for sharing, copying and resale abuse. Strong
+online validation can lower the chance, but weaknesses in offline or rushed event-day checks
+remain realistic. Impact 4: Large-scale misuse can cause crowding, revenue loss and disputes at
+gates.
+R03 - POS Malware
+Likelihood 3: POS systems are attractive because they handle payments, but they are usually
+more restricted than normal office computers. Impact 4: A successful compromise can expose
+payment data, interrupt sales and create contractual or compliance problems.
+R04 - Network Segmentation Failure
+Likelihood 3: A busy stadium has many device types, temporary connections and third-party
+users. A configuration mistake or weak rule can happen. Impact 5: If guest or less-trusted
+networks can reach operational systems, attackers could move toward critical stadium services.
+R05 - CCTV Compromise
+Likelihood 3: Cameras and video platforms often include many devices and remote
+administration points. Impact 4: Unauthorized viewing can expose sensitive footage and reduce
+security monitoring, especially during an event.
+R06 - BMS Manipulation
+Likelihood 3: Building systems may include legacy components and vendor remote access, but
+they are not normally directly open to the public Internet. Impact 5: Bad control of ventilation,
+lighting or environmental systems during a packed event can cause serious operational and safety
+problems.
+R07 - False IoT Sensor Data
+Likelihood 3: IoT devices can have weak authentication or firmware, especially when devices
+come from different vendors. Impact 4: Wrong crowd-density or facility data may lead staff to
+make poor operational decisions.
+R08 - Digital Signage Takeover
+Likelihood 3: Signage controllers may be managed remotely and sometimes use shared accounts.
+Impact 3: Offensive or false content can damage reputation and disrupt the event, but it usually
+does not directly stop core safety systems.
+R09 - Cloud Misconfiguration
+Likelihood 3: Cloud services change frequently and human configuration mistakes are realistic.
+Impact 4: Exposed storage or permissions may leak customer or business information and
+interrupt digital services.
+R10 - Privileged Account Compromise
+<PARSED TEXT FOR PAGE: 11 / 13>
+Likelihood 4: Admin accounts are directly targeted through phishing, stolen credentials and
+token theft. Impact 5: One high-privilege account may give access to several systems and allow
+security controls to be changed or disabled.
+R11 - Ransomware
+Likelihood 4: Stadium staff, contractors and vendors use many endpoints, email accounts and
+remote connections, giving attackers several entry paths. Impact 5: Ransomware can affect
+ticketing, office IT, event operations and recovery at the same time.
+R12 - Spectator Data Breach
+Likelihood 4: The database is valuable and is connected to public ticketing and mobile services.
+Impact 5: A breach may expose names, contact information, ticket history and other personal
+data, causing legal, financial and reputational damage.
+R13 - Third-Party Compromise
+Likelihood 3: The stadium relies on ticketing, payment, maintenance and technology vendors,
+but their security is not fully controlled by PASS. Impact 5: A trusted vendor account or update
+channel could give an attacker indirect access to important systems.
+R14 - Backup Compromise
+Likelihood 3: Backups are often targeted after attackers gain administrative access. Impact 5: If
+backups are lost, recovery from ransomware or a major failure may take much longer and could
+affect future events.
+R15 - Monitoring Failure
+Likelihood 3: Log gaps and misconfigured alerts are common when systems come from many
+teams and vendors. Impact 4: Attacks may continue for longer without detection, increasing the
+damage before response starts.
+R16 - AI Crowd-Prediction Model Manipulation
+Likelihood 3: The AI video analytics model is new and less studied than traditional IT systems,
+but adversarial or spoofed camera input and undetected model drift are realistic given limited
+monitoring of AI outputs. Impact 4: Wrong crowd-density or risk predictions could lead staff to
+under-react to a genuine crowd-safety issue or over-react and disrupt an event, without directly
+taking down core systems.
+
+9. Key Findings and Priorities
+The assessment shows that our stadium should not treat every technology in same way. The most
+important security work is that it should focus on the systems where cyber failure can spread
+across the venue or where it affect large numbers of people.
+Priority                    Why it Matters
+<PARSED TEXT FOR PAGE: 12 / 13>
+1. Protect privileged       Use strong MFA, separate administrator accounts, least privilege and
+access                      regular access reviews for high-level accounts.
+2. Reduce ransomware        Improve patching, email security, network segmentation, endpoint
+impact                      protection and tested offline/immutable backups.
+3. Protect spectator        Limit database access, secure web/API access, encrypt sensitive data
+information                 and monitor unusual exports.
+4. Separate IT, guest and   Public Wi-Fi should never provide a simple route to CCTV, BMS,
+operational networks        turnstiles or internal management systems.
+5. Control vendor access    Third parties should receive only the access they need, for a limited
+                            time, with logging and clear security requirements.
+6. Treat safety-linked      BMS, turnstiles, CCTV and crowd sensors need security controls
+technology as high          that consider physical safety, not only data loss.
+priority
+7. Improve monitoring       Critical applications, cloud services, IAM, network devices and
+coverage                    operational systems should send useful logs to the SOC where
+                            technically possible.
+
+
+
+10. Connection to Later IA Deliverables
+This foundation report is not standalone exercise. Each section produced here becomes input to
+the specific later deliverable in the course as shown below.
+Course Area                 How This Assignment Supports It
+
+Security Governance         Create policies, standards, guidelines and procedures for stadium
+                            systems and staff.
+Risk Assessment &           Choose controls for the risks above and calculate residual risk.
+Treatment
+Frameworks & Standards      Select a suitable framework and map controls to stadium risks.
+
+Security Controls &       Build a control matrix and define what evidence proves each control
+Assurance                 is working.
+Compliance                Check legal, contractual and privacy requirements and perform a
+                          gap analysis.
+Security Audit            Prepare an audit plan and record findings against the selected
+                          control set.
+IAM                       Design roles, RBAC/ABAC rules, privileged access and regular
+                          access reviews.
+Data Protection & Privacy Classify spectator, employee and video data; map flows; review
+                          encryption and privacy.
+BC/DR/Resilience          Perform a BIA, set RTO/RPO values and design recovery for event-
+                          day services.
+Incident Management       Create an IR plan, stadium incident scenario and SOC/SIEM/SOAR
+                          architecture.
+<PARSED TEXT FOR PAGE: 13 / 13>
+Emerging Technologies       Assess cloud, IoT, AI/video analytics and supply-chain risks.
+
+Future Challenges           Cover AI governance, post-quantum readiness and a future
+                            assurance roadmap.
+
+11. Summary
+PakArena Smart Stadium is a useful Information Assurance case because it combines ordinary
+business systems with technologies that directly support a crowded physical venue. The
+organization depends on ticketing, digital identity, cloud services, networks, CCTV, smart entry
+gates, BMS, IoT sensors and third-party providers. This means confidentiality, integrity and
+availability are all important, but safety and operational continuity also have to be considered.
+The report identified 16 important assets and 16 risks. The highest-rated risks are privileged
+account compromise, ransomware and theft of spectator information. Other major concerns
+include weak network separation, BMS manipulation, third-party access, backup compromise,
+CCTV security, IoT data integrity and manipulation of the AI crowd-prediction model. The
+governance model assigns responsibility across business leadership, IT, cybersecurity, facilities,
+operations, physical security, compliance and audit. This provides a clear foundation for the next
+assignments, where the risks can be treated with specific controls and then tested through
+assurance, compliance and audit activities.

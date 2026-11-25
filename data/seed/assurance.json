@@ -1,0 +1,721 @@
+{
+  "controls": [
+    {
+      "id": "C01",
+      "name": "DDoS protection and rate limiting",
+      "frameworks": "NIST CSF; CIS Controls",
+      "evidence_requirement": "WAF/CDN logs, traffic alerts, capacity test",
+      "status": "Partial",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C02",
+      "name": "Secure QR validation and anti-replay",
+      "frameworks": "NIST CSF; CIS Controls",
+      "evidence_requirement": "Ticket validation logs, QR configuration",
+      "status": "Partial",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C03",
+      "name": "POS hardening and segmentation",
+      "frameworks": "CIS Controls; NIST CSF",
+      "evidence_requirement": "Patch report, EDR status, firewall rules",
+      "status": "Partial",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C04",
+      "name": "Network segmentation and NAC",
+      "frameworks": "CIS Controls; IEC 62443",
+      "evidence_requirement": "VLAN map, firewall rules, NAC logs",
+      "status": "Partial",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C05",
+      "name": "MFA for CCTV administration",
+      "frameworks": "ISO/IEC 27001; CIS Controls",
+      "evidence_requirement": "IAM logs, account list, firmware record",
+      "status": "Gap",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C06",
+      "name": "BMS remote-access control",
+      "frameworks": "IEC 62443; NIST SP 800-82",
+      "evidence_requirement": "OT firewall rules, vendor access logs",
+      "status": "Gap",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C07",
+      "name": "IoT device authentication and encryption",
+      "frameworks": "IEC 62443; NIST SP 800-82",
+      "evidence_requirement": "Device inventory, certificates, firmware record",
+      "status": "Gap",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C09",
+      "name": "Cloud least privilege and configuration review",
+      "frameworks": "ISO/IEC 27001; CIS Controls",
+      "evidence_requirement": "Cloud IAM report, configuration review",
+      "status": "Partial",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C10",
+      "name": "MFA, PAM and access review",
+      "frameworks": "ISO/IEC 27001; CIS Controls",
+      "evidence_requirement": "IAM/PAM logs, access review record",
+      "status": "Partial",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C11",
+      "name": "EDR, patching and protected backups",
+      "frameworks": "PISF 2026; CIS Controls; NIST CSF",
+      "evidence_requirement": "EDR dashboard, patch report, backup test",
+      "status": "Partial",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C12",
+      "name": "Database access and encryption",
+      "frameworks": "ISO/IEC 27001; NIST CSF",
+      "evidence_requirement": "DB access logs, encryption settings",
+      "status": "Partial",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C13",
+      "name": "Third-party access control",
+      "frameworks": "PISF 2026; ISO/IEC 27001",
+      "evidence_requirement": "Vendor register, contracts, access logs",
+      "status": "Gap",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C14",
+      "name": "Immutable backup and restore testing",
+      "frameworks": "CIS Controls; PISF 2026",
+      "evidence_requirement": "Backup report, restore test record",
+      "status": "Gap",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C15",
+      "name": "Central logging and alert validation",
+      "frameworks": "NIST CSF; CIS Controls",
+      "evidence_requirement": "SIEM logs, alert test, retention settings",
+      "status": "Partial",
+      "source": "A2 PDF p. 6"
+    },
+    {
+      "id": "C16",
+      "name": "AI governance and model monitoring",
+      "frameworks": "NIST AI RMF",
+      "evidence_requirement": "AI inventory, model review, drift/validation record",
+      "status": "Gap",
+      "source": "A2 PDF p. 6"
+    }
+  ],
+  "risk_controls": [
+    {
+      "risk_id": "R01",
+      "control_id": "C01"
+    },
+    {
+      "risk_id": "R02",
+      "control_id": "C02"
+    },
+    {
+      "risk_id": "R03",
+      "control_id": "C03"
+    },
+    {
+      "risk_id": "R04",
+      "control_id": "C04"
+    },
+    {
+      "risk_id": "R05",
+      "control_id": "C05"
+    },
+    {
+      "risk_id": "R06",
+      "control_id": "C06"
+    },
+    {
+      "risk_id": "R07",
+      "control_id": "C07"
+    },
+    {
+      "risk_id": "R09",
+      "control_id": "C09"
+    },
+    {
+      "risk_id": "R10",
+      "control_id": "C10"
+    },
+    {
+      "risk_id": "R11",
+      "control_id": "C11"
+    },
+    {
+      "risk_id": "R12",
+      "control_id": "C12"
+    },
+    {
+      "risk_id": "R13",
+      "control_id": "C13"
+    },
+    {
+      "risk_id": "R14",
+      "control_id": "C14"
+    },
+    {
+      "risk_id": "R15",
+      "control_id": "C15"
+    },
+    {
+      "risk_id": "R16",
+      "control_id": "C16"
+    }
+  ],
+  "compliance_requirements": [
+    {
+      "id": "CMP01",
+      "framework": "NIST CSF",
+      "requirement": "Overall cyber program",
+      "status": "Partially Compliant",
+      "gap": "Several controls need stronger evidence.",
+      "recommendation": "Track log coverage and test alerts on a schedule.",
+      "purpose": "Cybersecurity outcomes across identification, protection, detection, response and recovery.",
+      "source": "A2 PDF pp. 5–8"
+    },
+    {
+      "id": "CMP02",
+      "framework": "NIST RMF",
+      "requirement": "Risk process",
+      "status": "Partially Compliant",
+      "gap": "Formal control assessment and continuous monitoring are developing.",
+      "recommendation": null,
+      "purpose": "Structured risk assessment, control selection, assessment and monitoring.",
+      "source": "A2 PDF pp. 5–8"
+    },
+    {
+      "id": "CMP03",
+      "framework": "ISO/IEC 27001",
+      "requirement": "ISMS",
+      "status": "Weak",
+      "gap": "Complete ISMS, documented controls and evidence cycle are not shown.",
+      "recommendation": null,
+      "purpose": "Information security management and control governance.",
+      "source": "A2 PDF pp. 5–8"
+    },
+    {
+      "id": "CMP04",
+      "framework": "COBIT",
+      "requirement": "Governance",
+      "status": "Partially Compliant",
+      "gap": "Performance measures and formal review records are unavailable.",
+      "recommendation": null,
+      "purpose": "Management oversight, accountability and IT/business alignment.",
+      "source": "A2 PDF pp. 5–8"
+    },
+    {
+      "id": "CMP05",
+      "framework": "CIS Controls",
+      "requirement": "Practical safeguards",
+      "status": "Partially Compliant",
+      "gap": "Privileged access, segmentation and recovery need stronger proof.",
+      "recommendation": "Enforce MFA/PAM and test immutable backup recovery.",
+      "purpose": "Access control, hardening, logging and recovery.",
+      "source": "A2 PDF pp. 5–8"
+    },
+    {
+      "id": "CMP06",
+      "framework": "IEC 62443",
+      "requirement": "OT security",
+      "status": "Weak",
+      "gap": "Strong zoning, remote-access control and device assurance are not demonstrated.",
+      "recommendation": "Isolate OT/BMS and constrain maintenance access.",
+      "purpose": "BMS, operational devices, zones and conduits.",
+      "source": "A2 PDF pp. 5–8"
+    },
+    {
+      "id": "CMP07",
+      "framework": "NIST SP 800-82",
+      "requirement": "OT operations",
+      "status": "Weak",
+      "gap": "OT monitoring, access and recovery procedures need work.",
+      "recommendation": "Use a jump host, MFA and allow-listing for maintenance.",
+      "purpose": "Protect OT while keeping availability and safety in mind.",
+      "source": "A2 PDF pp. 5–8"
+    },
+    {
+      "id": "CMP08",
+      "framework": "NIST AI RMF",
+      "requirement": "AI assurance",
+      "status": "Non-Compliant",
+      "gap": "Formal inventory, governance and monitoring evidence are not established.",
+      "recommendation": "Create an AI inventory, validation rules and human review process.",
+      "purpose": "Governance and risk management for crowd-prediction AI.",
+      "source": "A2 PDF pp. 5–8"
+    },
+    {
+      "id": "CMP09",
+      "framework": "PISF 2026",
+      "requirement": "National alignment",
+      "status": "Weak",
+      "gap": "Formal national alignment and evidence mapping are incomplete.",
+      "recommendation": null,
+      "purpose": "Governance, cybersecurity controls, third-party risk and resilience.",
+      "source": "A2 PDF pp. 5–8"
+    }
+  ],
+  "compliance_controls": [
+    {
+      "requirement_id": "CMP01",
+      "control_id": "C01"
+    },
+    {
+      "requirement_id": "CMP01",
+      "control_id": "C02"
+    },
+    {
+      "requirement_id": "CMP01",
+      "control_id": "C03"
+    },
+    {
+      "requirement_id": "CMP01",
+      "control_id": "C11"
+    },
+    {
+      "requirement_id": "CMP01",
+      "control_id": "C12"
+    },
+    {
+      "requirement_id": "CMP01",
+      "control_id": "C15"
+    },
+    {
+      "requirement_id": "CMP03",
+      "control_id": "C05"
+    },
+    {
+      "requirement_id": "CMP03",
+      "control_id": "C09"
+    },
+    {
+      "requirement_id": "CMP03",
+      "control_id": "C10"
+    },
+    {
+      "requirement_id": "CMP03",
+      "control_id": "C12"
+    },
+    {
+      "requirement_id": "CMP03",
+      "control_id": "C13"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C01"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C02"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C03"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C04"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C05"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C09"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C10"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C11"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C14"
+    },
+    {
+      "requirement_id": "CMP05",
+      "control_id": "C15"
+    },
+    {
+      "requirement_id": "CMP06",
+      "control_id": "C04"
+    },
+    {
+      "requirement_id": "CMP06",
+      "control_id": "C06"
+    },
+    {
+      "requirement_id": "CMP06",
+      "control_id": "C07"
+    },
+    {
+      "requirement_id": "CMP07",
+      "control_id": "C06"
+    },
+    {
+      "requirement_id": "CMP07",
+      "control_id": "C07"
+    },
+    {
+      "requirement_id": "CMP08",
+      "control_id": "C16"
+    },
+    {
+      "requirement_id": "CMP09",
+      "control_id": "C11"
+    },
+    {
+      "requirement_id": "CMP09",
+      "control_id": "C13"
+    },
+    {
+      "requirement_id": "CMP09",
+      "control_id": "C14"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E01",
+      "control_id": "C01",
+      "type": "Evidence request",
+      "description": "WAF/CDN logs, traffic alerts, capacity test",
+      "status": "Requested",
+      "finding_id": null,
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E02",
+      "control_id": "C02",
+      "type": "Evidence request",
+      "description": "Ticket validation logs, QR configuration",
+      "status": "Requested",
+      "finding_id": null,
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E03",
+      "control_id": "C03",
+      "type": "Evidence request",
+      "description": "Patch report, EDR status, firewall rules",
+      "status": "Requested",
+      "finding_id": null,
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E04",
+      "control_id": "C04",
+      "type": "Evidence request",
+      "description": "VLAN map, firewall rules, NAC logs",
+      "status": "Requested",
+      "finding_id": "F03",
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E05",
+      "control_id": "C05",
+      "type": "Evidence request",
+      "description": "IAM logs, account list, firmware record",
+      "status": "Requested",
+      "finding_id": "F04",
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E06",
+      "control_id": "C06",
+      "type": "Evidence request",
+      "description": "OT firewall rules, vendor access logs",
+      "status": "Requested",
+      "finding_id": "F05",
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E07",
+      "control_id": "C07",
+      "type": "Evidence request",
+      "description": "Device inventory, certificates, firmware record",
+      "status": "Requested",
+      "finding_id": null,
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E09",
+      "control_id": "C09",
+      "type": "Evidence request",
+      "description": "Cloud IAM report, configuration review",
+      "status": "Requested",
+      "finding_id": "F06",
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E10",
+      "control_id": "C10",
+      "type": "Evidence request",
+      "description": "IAM/PAM logs, access review record",
+      "status": "Requested",
+      "finding_id": "F01",
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E11",
+      "control_id": "C11",
+      "type": "Evidence request",
+      "description": "EDR dashboard, patch report, backup test",
+      "status": "Requested",
+      "finding_id": "F02",
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E12",
+      "control_id": "C12",
+      "type": "Evidence request",
+      "description": "DB access logs, encryption settings",
+      "status": "Requested",
+      "finding_id": null,
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E13",
+      "control_id": "C13",
+      "type": "Evidence request",
+      "description": "Vendor register, contracts, access logs",
+      "status": "Requested",
+      "finding_id": "F07",
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E14",
+      "control_id": "C14",
+      "type": "Evidence request",
+      "description": "Backup report, restore test record",
+      "status": "Requested",
+      "finding_id": null,
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E15",
+      "control_id": "C15",
+      "type": "Evidence request",
+      "description": "SIEM logs, alert test, retention settings",
+      "status": "Requested",
+      "finding_id": "F08",
+      "source": "A2 PDF pp. 6–8"
+    },
+    {
+      "id": "E16",
+      "control_id": "C16",
+      "type": "Evidence request",
+      "description": "AI inventory, model review, drift/validation record",
+      "status": "Requested",
+      "finding_id": "F09",
+      "source": "A2 PDF pp. 6–8"
+    }
+  ],
+  "audit_findings": [
+    {
+      "id": "F01",
+      "control_id": "C10",
+      "requirement": "Privileged access",
+      "audit_control": "MFA + PAM",
+      "evidence_requested": "IAM logs, admin list",
+      "test": "Sample admin accounts and verify MFA and role need",
+      "finding": "Partial evidence of strong privileged controls",
+      "recommendation": "Enforce MFA/PAM and review admin rights quarterly",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "id": "F02",
+      "control_id": "C11",
+      "requirement": "Ransomware resilience",
+      "audit_control": "EDR + protected backups",
+      "evidence_requested": "EDR, patch and backup reports",
+      "test": "Check endpoint coverage and perform sample restore",
+      "finding": "Controls are planned, but full proof is not available",
+      "recommendation": "Close patch gaps and test immutable backup recovery",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "id": "F03",
+      "control_id": "C04",
+      "requirement": "Network separation",
+      "audit_control": "Segmentation + NAC",
+      "evidence_requested": "Network diagram, VLAN and firewall rules",
+      "test": "Trace guest-to-internal paths and review rules",
+      "finding": "Separate networks exist, but weak separation is still a risk",
+      "recommendation": "Tighten firewall rules and isolate OT/BMS networks",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "id": "F04",
+      "control_id": "C05",
+      "requirement": "CCTV security",
+      "audit_control": "MFA + unique accounts",
+      "evidence_requested": "User list, firmware record, login logs",
+      "test": "Check default/shared accounts and remote admin access",
+      "finding": "Weak account protection remains possible",
+      "recommendation": "Remove shared/default accounts and enforce MFA",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "id": "F05",
+      "control_id": "C06",
+      "requirement": "BMS security",
+      "audit_control": "OT access control",
+      "evidence_requested": "OT rules, vendor logs",
+      "test": "Review remote maintenance route and allowed systems",
+      "finding": "Remote access and isolation need stronger control",
+      "recommendation": "Use jump host, MFA and allow-listing for maintenance",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "id": "F06",
+      "control_id": "C09",
+      "requirement": "Cloud security",
+      "audit_control": "Least privilege + review",
+      "evidence_requested": "IAM report, config review",
+      "test": "Sample roles, storage permissions and exposed services",
+      "finding": "Cloud review evidence is incomplete",
+      "recommendation": "Run regular configuration checks and reduce privileges",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "id": "F07",
+      "control_id": "C13",
+      "requirement": "Vendor access",
+      "audit_control": "Third-party control",
+      "evidence_requested": "Vendor register, contracts, access logs",
+      "test": "Sample vendors and compare access with contract need",
+      "finding": "Formal vendor control evidence is limited",
+      "recommendation": "Maintain vendor register, expiry dates and access reviews",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "id": "F08",
+      "control_id": "C15",
+      "requirement": "Logging/SIEM",
+      "audit_control": "Central logging + alert test",
+      "evidence_requested": "SIEM source list, alerts, retention",
+      "test": "Check critical sources and test one alert path",
+      "finding": "SOC exists, but coverage gaps are still possible",
+      "recommendation": "Track log coverage and test alerts on a schedule",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "id": "F09",
+      "control_id": "C16",
+      "requirement": "AI assurance",
+      "audit_control": "AI governance + monitoring",
+      "evidence_requested": "AI inventory, model review, drift logs",
+      "test": "Review inputs, model changes and human decision points",
+      "finding": "Formal AI governance is not established",
+      "recommendation": "Create AI inventory, validation rules and human review process",
+      "source": "A2 PDF p. 8"
+    }
+  ],
+  "corrective_actions": [
+    {
+      "id": "CA01",
+      "finding_id": "F01",
+      "action": "Enforce MFA/PAM and review admin rights quarterly",
+      "source": "A2 PDF p. 8 (recommendation)"
+    },
+    {
+      "id": "CA02",
+      "finding_id": "F02",
+      "action": "Close patch gaps and test immutable backup recovery",
+      "source": "A2 PDF p. 8 (recommendation)"
+    },
+    {
+      "id": "CA03",
+      "finding_id": "F03",
+      "action": "Tighten firewall rules and isolate OT/BMS networks",
+      "source": "A2 PDF p. 8 (recommendation)"
+    },
+    {
+      "id": "CA04",
+      "finding_id": "F04",
+      "action": "Remove shared/default accounts and enforce MFA",
+      "source": "A2 PDF p. 8 (recommendation)"
+    },
+    {
+      "id": "CA05",
+      "finding_id": "F05",
+      "action": "Use jump host, MFA and allow-listing for maintenance",
+      "source": "A2 PDF p. 8 (recommendation)"
+    },
+    {
+      "id": "CA06",
+      "finding_id": "F06",
+      "action": "Run regular configuration checks and reduce privileges",
+      "source": "A2 PDF p. 8 (recommendation)"
+    },
+    {
+      "id": "CA07",
+      "finding_id": "F07",
+      "action": "Maintain vendor register, expiry dates and access reviews",
+      "source": "A2 PDF p. 8 (recommendation)"
+    },
+    {
+      "id": "CA08",
+      "finding_id": "F08",
+      "action": "Track log coverage and test alerts on a schedule",
+      "source": "A2 PDF p. 8 (recommendation)"
+    },
+    {
+      "id": "CA09",
+      "finding_id": "F09",
+      "action": "Create AI inventory, validation rules and human review process",
+      "source": "A2 PDF p. 8 (recommendation)"
+    }
+  ],
+  "assurance_priorities": [
+    {
+      "priority": 1,
+      "recommendation": "Protect privileged access through MFA/PAM and access reviews.",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "priority": 2,
+      "recommendation": "Tighten separation across public Wi-Fi, corporate services and OT/BMS.",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "priority": 3,
+      "recommendation": "Test immutable backup restoration and validate recovery targets.",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "priority": 4,
+      "recommendation": "Maintain vendor records with owners, expiry and reviews.",
+      "source": "A2 PDF p. 8"
+    },
+    {
+      "priority": 5,
+      "recommendation": "Establish an AI inventory, validation and human review.",
+      "source": "A2 PDF p. 8"
+    }
+  ]
+}

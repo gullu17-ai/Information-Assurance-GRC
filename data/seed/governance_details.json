@@ -1,0 +1,170 @@
+{
+  "data_items": [
+    {
+      "name": "Public announcements",
+      "classification": "Public",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Stadium layout",
+      "classification": "Public",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Event schedules",
+      "classification": "Public",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Ticket terms",
+      "classification": "Public",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Internal notices",
+      "classification": "Internal",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Standard staff procedures",
+      "classification": "Internal",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Non-confidential meeting minutes",
+      "classification": "Internal",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Employee contact list",
+      "classification": "Internal",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Network diagrams",
+      "classification": "Confidential",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Vendor pricing and contracts",
+      "classification": "Confidential",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Employee HR records",
+      "classification": "Confidential",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Incident notes",
+      "classification": "Confidential",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "CCTV footage",
+      "classification": "Restricted",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Access logs",
+      "classification": "Restricted",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Payment-related documents",
+      "classification": "Restricted",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Investigative evidence",
+      "classification": "Restricted",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Spectator personal information",
+      "classification": "Restricted",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Core network configurations",
+      "classification": "Critical",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "Backup encryption keys",
+      "classification": "Critical",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "BMS settings",
+      "classification": "Critical",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "IAM admin secrets",
+      "classification": "Critical",
+      "source": "A3 PDF pp. 6–7"
+    },
+    {
+      "name": "DR credentials",
+      "classification": "Critical",
+      "source": "A3 PDF pp. 6–7"
+    }
+  ],
+  "ai_risk_reviews": [
+    {
+      "topic": "Hallucination",
+      "crowd_prediction_review": "Review incorrect crowd estimates as model errors.",
+      "assistant_review": "Compare suggestions with source rows and human references.",
+      "source": "Plan PDF p. 13 (assessment topics); local review prompts"
+    },
+    {
+      "topic": "Bias",
+      "crowd_prediction_review": "Test performance across event and crowd conditions.",
+      "assistant_review": "Review whether ranking overlooks relevant risks.",
+      "source": "Plan PDF p. 13 (assessment topics); local review prompts"
+    },
+    {
+      "topic": "Data leakage",
+      "crowd_prediction_review": "Restrict, encrypt and log access to footage.",
+      "assistant_review": "Use synthetic or non-sensitive inputs for external requests.",
+      "source": "Plan PDF p. 13 (assessment topics); local review prompts"
+    },
+    {
+      "topic": "Prompt injection",
+      "crowd_prediction_review": "Review manipulated video under input integrity. Text prompt exposure is undocumented.",
+      "assistant_review": "Treat prompts as data and validate returned control IDs.",
+      "source": "Plan PDF p. 13 (assessment topics); local review prompts"
+    },
+    {
+      "topic": "Model drift",
+      "crowd_prediction_review": "Track crowd-estimate accuracy across event and camera conditions.",
+      "assistant_review": "Retest after changing models, rules or catalog data.",
+      "source": "Plan PDF p. 13 (assessment topics); local review prompts"
+    },
+    {
+      "topic": "Over-reliance",
+      "crowd_prediction_review": "Require human review and keep direct CCTV/manual fallback.",
+      "assistant_review": "Require analyst review of every recommendation.",
+      "source": "Plan PDF p. 13 (assessment topics); local review prompts"
+    },
+    {
+      "topic": "Explainability",
+      "crowd_prediction_review": "Review signals contributing to unusual crowd estimates.",
+      "assistant_review": "Show source risk IDs, controls, frameworks and evidence requirements.",
+      "source": "Plan PDF p. 13 (assessment topics); local review prompts"
+    },
+    {
+      "topic": "Availability",
+      "crowd_prediction_review": "Use direct CCTV and manual assessment when needed.",
+      "assistant_review": "Use local rule-based mode when external ranking fails.",
+      "source": "Plan PDF p. 13 (assessment topics); local review prompts"
+    },
+    {
+      "topic": "Vendor risk",
+      "crowd_prediction_review": "Review model, hosting and maintenance dependencies.",
+      "assistant_review": "Review provider terms, availability and data handling.",
+      "source": "Plan PDF p. 13 (assessment topics); local review prompts"
+    }
+  ]
+}

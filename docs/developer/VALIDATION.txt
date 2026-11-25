@@ -1,0 +1,5 @@
+Dashboard cleanup verified 23 November 2026.
+33 tests passed, including all 19 pages, workflow updates, live external-action counts, evidence-linked closure and unassessed versus measured-zero control effectiveness.
+All mandatory executive sections render together. AI benchmark remains in AI Evaluation. Supporting material is last in navigation.
+CISO PDF and AI Automation Card are each one page. Extracted CISO PDF text confirms Control effectiveness is Not yet assessed, open corrective actions are 13, and mean inherent risk is 14.31/25.
+Visual browser inspection remains unverified.

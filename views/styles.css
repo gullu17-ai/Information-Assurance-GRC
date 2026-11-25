@@ -1,0 +1,87 @@
+/* Colors are injected from services.design_system.COLORS. */
+.stApp { background:var(--pass-canvas); color:var(--pass-ink); font-family:"Segoe UI",system-ui,sans-serif; }
+::selection { background:var(--pass-accent); color:var(--pass-surface); }
+input,textarea { caret-color:var(--pass-accent); }
+[data-testid="stHeader"] { background:var(--pass-canvas); }
+[data-testid="stMainBlockContainer"] { max-width:1600px; padding:5rem clamp(1.25rem,3vw,3.5rem) 3rem; }
+[data-testid="stSidebar"] { background:var(--pass-sidebar); width:18rem; min-width:0; max-width:min(18rem,100vw); border-inline-end:1px solid var(--pass-sidebar-line); }
+[data-testid="stSidebarUserContent"] { padding:1rem .8rem; }
+.pass-brand { display:flex; align-items:center; gap:12px; padding-bottom:22px; border-bottom:1px solid var(--pass-sidebar-line); margin-bottom:8px; }
+.pass-mark { background:var(--pass-sidebar-selected); color:var(--pass-sidebar-ink); padding:12px 8px; border-radius:12px; font-size:.875rem; font-weight:750; }
+.pass-brand strong { display:block; font-size:1rem; line-height:1.4; color:var(--pass-sidebar-ink); }
+.pass-brand small { display:block; margin-top:4px; font-size:.875rem; color:var(--pass-sidebar-muted); }
+[data-testid="stSidebar"] label p { color:var(--pass-sidebar-ink); }
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p { color:var(--pass-sidebar-muted); }
+.st-key-navigation [data-testid="stRadioGroup"] { gap:4px; width:100%; }
+.st-key-navigation [data-testid="stRadioOption"] { min-height:44px; padding:8px; width:100%; box-sizing:border-box; border-radius:8px; }
+.st-key-navigation [data-testid="stRadioOption"] p { font-size:.9375rem; line-height:1.4; color:var(--pass-sidebar-muted); overflow-wrap:anywhere; }
+.st-key-navigation [data-testid="stRadioOption"]:hover { background:var(--pass-sidebar-hover); }
+.st-key-navigation [data-testid="stRadioOption"]:has(input:checked) { background:var(--pass-sidebar-selected); }
+.st-key-navigation [data-testid="stRadioOption"]:has(input:checked) p { color:var(--pass-sidebar-ink); font-weight:650; }
+/* Keep native radio inputs in the accessibility and keyboard trees. */
+.st-key-navigation [data-testid="stRadioOption"]:has(input:focus-visible) { outline:3px solid var(--pass-focus-inverse); outline-offset:-3px; }
+.st-key-pass_header { height:auto!important; flex-shrink:0; box-sizing:border-box; padding-bottom:1rem; border-bottom:1px solid var(--pass-line); gap:.5rem; }
+/* Let Streamlit wrappers grow with wrapped page headings and descriptions. */
+.st-key-pass_header > div { height:auto!important; flex-shrink:0; }
+.st-key-pass_header h1 { font-size:clamp(1.8rem,2.7vw,2.6rem); line-height:1.25; letter-spacing:-.03em; font-weight:750; margin:0; padding:.125rem 0 .25rem; overflow-wrap:anywhere; }
+.pass-header-description { font-size:1rem; line-height:1.6; color:var(--pass-muted); max-width:75ch; }
+[data-testid="stMain"] h2 { font-size:1.2rem; line-height:1.4; font-weight:700; margin-top:1rem; padding:0 0 .3rem; }
+[data-testid="stMain"] h3 { font-size:1.1rem; line-height:1.4; }
+[data-testid="stMain"] [data-testid="stCaptionContainer"] p { color:var(--pass-muted); font-size:.875rem; }
+[class*="st-key-pass_metric_"] { background:var(--pass-surface); border:1px solid var(--pass-line); border-radius:12px; padding:1rem; min-height:110px; height:auto!important; gap:.25rem; }
+[class*="st-key-pass_metric_"] > div { height:auto!important; flex-shrink:0; }
+[data-testid="stMetricLabel"] p { font-size:.875rem; color:var(--pass-muted); font-weight:600; white-space:normal; }
+[data-testid="stMetricValue"] { color:var(--pass-ink); font-size:2rem; line-height:1.4; font-weight:750; letter-spacing:-.025em; font-variant-numeric:tabular-nums; }
+[class*="st-key-pass_metric_critical_"] { background:var(--pass-critical-bg); }
+[class*="st-key-pass_metric_critical_"] [data-testid="stMetricValue"] { color:var(--pass-critical-ink); }
+.pass-metric-detail { font-size:.875rem; line-height:1.5; color:var(--pass-muted); }
+.pass-missing { display:flex; flex-direction:column; align-items:flex-start; gap:12px; color:var(--pass-muted); font-size:.875rem; }
+.pass-badge { display:inline-block; max-width:100%; overflow-wrap:anywhere; padding:4px 9px; border-radius:20px; font-size:.875rem; font-weight:600; line-height:1.4; background:var(--pass-neutral-bg); color:var(--pass-neutral-ink); }
+.pass-tone-critical { background:var(--pass-critical-bg); color:var(--pass-critical-ink); }
+.pass-tone-warning { background:var(--pass-warning-bg); color:var(--pass-warning-ink); }
+.pass-tone-caution { background:var(--pass-caution-bg); color:var(--pass-caution-ink); }
+.pass-tone-positive { background:var(--pass-positive-bg); color:var(--pass-positive-ink); }
+.pass-tone-info { background:var(--pass-info-bg); color:var(--pass-info-ink); }
+.pass-callout { padding:20px 24px; background:var(--pass-accent-soft); border-radius:12px; color:var(--pass-accent-ink); }
+.pass-callout strong { display:block; font-size:1.15rem; }
+.pass-callout p { margin:.4rem 0 0; font-size:1rem; line-height:1.6; max-width:75ch; }
+.pass-empty { padding:1.25rem; border:1px dashed var(--pass-line); border-radius:12px; color:var(--pass-muted); background:var(--pass-surface); }
+.pass-empty strong { color:var(--pass-ink); }
+.pass-empty p { margin:.4rem 0 0; line-height:1.6; }
+[data-testid="stButton"] button,[data-testid="stFormSubmitButton"] button { min-height:44px; border-radius:8px; font-size:1rem; }
+[data-testid="stButton"] button:hover { color:var(--pass-accent); border-color:var(--pass-accent); }
+[data-testid="stMain"] :is(button,input,textarea,a,[tabindex]):focus-visible,.pass-table-wrap:focus-visible { outline:3px solid var(--pass-focus); outline-offset:3px; }
+[data-testid="stSidebar"] :is(button,input,a,[tabindex]):focus-visible { outline:3px solid var(--pass-focus-inverse); outline-offset:2px; }
+[data-testid="stTextInput"] input,[data-testid="stTextArea"] textarea { font-size:1rem; }
+[data-baseweb="tab-list"] { gap:20px; border-bottom:1px solid var(--pass-line); margin:10px 0 12px; overflow-x:auto; }
+[data-baseweb="tab"] { min-height:44px; padding:12px 2px; font-size:1rem; }
+[data-baseweb="tab-highlight"] { background:var(--pass-accent); }
+.pass-table-wrap { border:1px solid var(--pass-line); border-radius:12px; overflow-x:auto; max-width:100%; scrollbar-color:var(--pass-muted) var(--pass-surface-soft); }
+.pass-table { width:100%; border-collapse:collapse; background:var(--pass-surface); text-align:start; font-size:.9375rem; line-height:1.5; font-variant-numeric:tabular-nums; }
+.pass-table th { background:var(--pass-surface-soft); color:var(--pass-muted); font-size:.875rem; font-weight:650; }
+.pass-table th,.pass-table td { padding:14px; vertical-align:top; overflow-wrap:anywhere; }
+.pass-table tr + tr { border-top:1px solid var(--pass-line); }
+.pass-table td:first-child { color:var(--pass-accent); font-weight:650; }
+.pass-table tbody tr:hover { background:var(--pass-surface-soft); }
+[data-testid="stDataFrame"] { border:1px solid var(--pass-line); border-radius:12px; overflow:hidden; max-width:100%; }
+[data-testid="stExpander"] details,[data-testid="stForm"] { background:var(--pass-surface); border-color:var(--pass-line); border-radius:12px; }
+[data-testid="stForm"] { padding:1.25rem; }
+.pass-bars { padding:18px; border:1px solid var(--pass-line); border-radius:12px; background:var(--pass-surface); }
+.pass-bar-row { display:grid; grid-template-columns:minmax(0,1fr) minmax(20%,2fr) minmax(3.3em,auto); gap:.6rem; align-items:center; min-height:44px; font-size:.9375rem; overflow-wrap:anywhere; }
+.pass-bar-row > span:last-child { text-align:end; }
+.pass-track { height:8px; border-radius:6px; background:var(--pass-line); overflow:hidden; }
+.pass-track i { display:block; height:100%; border-radius:6px; background:var(--pass-accent); }
+.pass-track .pass-fill-critical { background:var(--pass-critical-ink); }
+.pass-track .pass-fill-warning { background:var(--pass-warning-ink); }
+.pass-track .pass-fill-caution { background:var(--pass-caution-ink); }
+.pass-track .pass-fill-positive { background:var(--pass-positive-ink); }
+.pass-flow { display:flex; gap:1rem; padding:0; margin:0; list-style:none; }
+.pass-flow li { flex:1; min-width:0; display:grid; place-items:center; padding:14px; min-height:48px; background:var(--pass-surface); border:1px solid var(--pass-line); border-radius:12px; text-align:center; font-size:.9375rem; overflow-wrap:anywhere; }
+.pass-flow .pass-boundary { color:var(--pass-accent-ink); background:var(--pass-accent-soft); border-color:var(--pass-accent); }
+.pass-flow-vertical { flex-direction:column; }
+.pass-roadmap { border-top:1px solid var(--pass-accent); padding-top:.75rem; }
+.pass-roadmap small { color:var(--pass-muted); font-size:.875rem; }
+[data-testid="stText"] pre { white-space:pre-wrap; overflow-wrap:anywhere; }
+@media(max-width:1100px) { [data-testid="stMain"] [data-testid="stHorizontalBlock"] { flex-wrap:wrap; } [data-testid="stMain"] [data-testid="stColumn"] { min-width:min(100%,17rem); flex:1 1 17rem; } }
+@media(max-width:700px) { [data-testid="stMainBlockContainer"] { padding:5rem 1rem 2rem; } [data-testid="stMain"] [data-testid="stColumn"] { width:100%; flex-basis:100%; min-width:0; } .pass-flow { flex-direction:column; } .pass-table th,.pass-table td { padding:10px; } [data-baseweb="tab-list"] { gap:12px; } [data-baseweb="tab"] { white-space:normal; } .pass-bar-row { grid-template-columns:minmax(0,1fr) minmax(3.3em,auto); } .pass-track { grid-column:1 / -1; grid-row:2; } }
+@media(forced-colors:active) { .pass-badge { border:1px solid CanvasText; } .pass-track i { background:Highlight; } }

@@ -1,0 +1,565 @@
+<PARSED TEXT FOR PAGE: 1 / 11>
+                        CY3003
+      Information Assurance
+
+                 Assignment 03
+  Operational Resilience & Incident Response Package
+
+
+
+
+Submitted by: Roshni Fawad, Anum Ali, Furqan Haider,
+Muhammad Abdullah, Aatif Ali Khan
+Roll number: 23I-2107, 23I-2089, 23I-2123, 23I-2064, 23I-
+2120
+<PARSED TEXT FOR PAGE: 2 / 11>
+Information Assurance Assignment
+
+
+
+
+        Table of Contents
+        1. Introduction                                                  3
+        2. Identity and Access Management (IAM)                          3
+          2.1 IAM Flow                                                   3
+          2.2 Role-Based Access Control (RBAC)                           3
+          2.3 Privileged Access                                          4
+          2.4 Multi-Factor Authentication (MFA)                          4
+          2.5 Access Review                                              4
+          2.6 Vendor Access                                              5
+        3. Data Classification and Protection                            5
+          3.1 Classification Levels                                      5
+          3.2 Handling Rules                                             5
+        4. Business Continuity and Disaster Recovery (BC/DR)             6
+          4.1 Recovery Targets                                           6
+          4.2 Recovery Design                                            7
+          4.3 Recovery Order                                             7
+          4.4 Backup and DR Testing                                      7
+        5. Major Incident Scenario: Ransomware During a Stadium Event    8
+          5.1 Scenario                                                   8
+          5.2 Incident Response Flow                                     8
+          5.3 Preparation                                                8
+          5.4 Detection                                                  8
+          5.5 Analysis                                                   8
+          5.6 Containment                                                9
+          5.7 Eradication                                                9
+          5.8 Recovery                                                   9
+          5.9 Lessons Learned                                            9
+        6. Operational Assurance Checklist                              10
+        7. Summary                                                      10
+
+
+
+
+                                                                        Page 1 of 11
+<PARSED TEXT FOR PAGE: 3 / 11>
+Information Assurance Assignment
+
+
+
+
+                                   Page 2 of 11
+<PARSED TEXT FOR PAGE: 4 / 11>
+Information Assurance Assignment
+
+
+
+
+        1. Introduction
+        In Assignment 3, the PakArena Smart Stadium (PASS) project moves from governance and
+        compliance to incident response, recovery, and everyday protection. Ransomware, spectator data
+        theft, BMS manipulation, insufficient network separation, confidential account breach, and AI video-
+        analytics manipulation were among the sixteen major assets and sixteen threats found in the first
+        deliverable. This project turns those earlier ideas into practical operational tactics using the same
+        stadium.
+        There are four primary components to the bundle. It starts by designing identity and access
+        management so that users only have the access they require. Secondly, it categorizes stadium data
+        such that private and public data are treated differently. Third, it establishes a disaster recovery plan
+        and recovery goals for the services that are most important during an incident. Lastly, it describes a
+        significant cyber event from planning to lessons discovered. The goal is to demonstrate how PASS
+        would ensure the safe operation of an actual event even in the case of a significant security issue.
+
+        2. Identity and Access Management (IAM)
+        2.1 IAM Flow
+        Passengers, long-term workers, temporary event personnel, security teams, engineers, administrators,
+        and outside suppliers are just a few of the various users of PASS. They cannot be considered in the
+        same way.For each account, the IAM method below delivers a straightforward path:
+        User -> Identity -> Authentication -> Authorization -> Least Privilege -> Monitoring
+        In reality, an individual must first have a recognized identity. After that, the system verifies that the
+        individual truly possesses that identification. Access is then only allocated to the systems required for
+        the work, according to the individual's position. Important activity is recorded so that anomalous
+        access may be examined at a later time.
+
+        2.2 Role-Based Access Control (RBAC)
+        Role-Based Access Control works well for all PASS users as the access rights are assigned to certain
+        roles rather than individuals.To ensure that the process is not overly complicated and maintain control
+        over the system, the chart below presents broad categories of roles.
+         Role                                Main Access                         Restriction
+                                             Ticket account, mobile app,         No staff or internal-system
+         Spectator
+                                             public Wi-Fi                        access
+                                             Shift tools, assigned event         No admin, finance, BMS or
+         Event Staff
+                                             applications                        CCTV administration
+                                             CCTV viewing, incident
+                                                                                 No system configuration unless
+         Security Staff                      reporting, access-control
+                                                                                 separately approved
+                                             operations
+                                             Turnstile status, event-control
+                                                                                 Only operational functions
+         Stadium Operations                  tools, digital signage
+                                                                                 needed for the event
+                                             operations
+                                             BMS, selected IoT systems and       No spectator database or
+         Facilities / OT Engineer
+                                             maintenance consoles                finance access
+                                             POS reporting, approved
+                                                                                 No OT or CCTV
+         Finance / Commercial                finance systems and vendor
+                                                                                 administration
+                                             settlement
+                                             SIEM, security logs, alert          Read/response access; no
+         SOC Analyst
+                                             investigation tools                 routine business-data changes
+                                             Servers, cloud, network and         privileged access through
+         IT Administrator
+                                             identity administration             separate admin account
+
+
+
+
+                                                                                                                    Page 3 of 11
+<PARSED TEXT FOR PAGE: 5 / 11>
+Information Assurance Assignment
+
+
+
+
+         Role                                Main Access                         Restriction
+                                             Only the contracted system for      Time-limited access with
+         Vendor / Contractor
+                                             a fixed period                      owner approval and logging
+
+
+        2.3 Privileged Access
+        Since Assignment 1 identified breached admin accounts as a top threat, privilege access stands among
+        the most critical security vulnerability in PASS. Privilege access thus needs much higher level of
+        control compared to the regular employee access:
+             • Access on dual accounts: Employees use a general account that is used for communication
+                  and task processing, as well as a privileged account that is used for completing high-level
+                  tasks only.
+             • Permissions restrictions: Access on high level is provided to those systems that an
+                  administrator manages.
+             • Required approval: Any changes to BMS, IAM, cloud, network configuration, or other
+                  systems associated with backups can be made only using an authorized privileged account.
+             • Time-restricted access: Access for vendor personnel is provided temporarily and then
+                  becomes inactive automatically after completion of the task/contract.
+             • Logging: Every administrative access along with important changes to any system is sent
+                  automatically to SOC/SIEM for monitoring.
+             • No single login: Admin accounts that serve general purposes should be phased out. “Break
+                  Glass” accounts should always be restricted, and every use reported immediately.
+
+        2.4 Multi-Factor Authentication (MFA)
+        MFA follows a password with an additional check. Employee remote access, cloud administration,
+        email, IAM administration, VPN access, and all vendor accounts should all require it. Furthermore, in
+        cases where the user falls within the stadium network, the privileged accounts require the
+        authentication process to be carried out. In activities that pose no threats to security, the standard login
+        can be used by spectator accounts, but for more sensitive ones, an extra authentication layer is
+        required.
+
+        2.5 Access Review
+        Access should not stay active forever just because it was once approved. PASS will use the following
+        review cycle so that old permissions are removed before they become a security problem.
+         Account Type                        Review Frequency                    Owner
+         Privileged/admin accounts           Monthly                             CISO / system owner
+                                                                                 Department manager + system
+         Permanent employee access           Quarterly
+                                                                                 owner
+                                             Before and after each event
+         Temporary event staff                                                   Operations / HR
+                                             period
+                                             Before each approved window
+         Vendor and contractor access                                            System owner + IT/Security
+                                             and monthly for long contracts
+                                             Immediate disable when
+         Dormant or leaver accounts                                              HR + IT/IAM
+                                             confirmed
+
+
+
+
+                                                                                                                 Page 4 of 11
+<PARSED TEXT FOR PAGE: 6 / 11>
+Information Assurance Assignment
+
+
+
+
+        2.6 Vendor Access
+        Third party organizations play a role in ticketing, payment processing, Internet access, maintenance of
+        events, technology, but they cannot have unlimited access. Every vendor account needs to have a
+        sponsor from within PASS who will clearly state the purpose, end date, and MFA of the account. The
+        remote access is allowed through the official and designated VPN or gateway only. Also, access to
+        BMS, CCTV, cloud management, or any other important system is always logged. When the process
+        is done, the account is disabled.
+
+        3. Data Classification and Protection
+        3.1 Classification Levels
+        Not every piece of stadium information needs the same protection. PASS uses five simple classes.
+        The label is based on what could happen if the information is exposed, changed or lost.
+         Class                             Meaning                            PASS Examples
+                                                                              Public announcement, layout
+         Public                            Information meant for anyone       of the stadium, schedule of the
+                                                                              event, and the ticket terms
+                                                                              Internal notices, standard
+                                           Routine information for staff      procedures, minutes of non-
+         Internal
+                                           use                                confidential meetings, and an
+                                                                              employee contact list
+                                                                              Network diagrams, pricing of
+                                           Information that could harm        vendors, contracts, HR records
+         Confidential
+                                           PASS or individuals if exposed     of employees, and incident
+                                                                              notes
+                                                                              CCTV footage, access logs,
+                                           Sensitive personal or security
+                                                                              payment-related documents,
+         Restricted                        information needing strict
+                                                                              investigative evidence, and
+                                           access
+                                                                              spectator personal information
+                                                                              core network setups, backup
+                                           Information or configuration
+                                                                              encryption keys, BMS settings,
+         Critical                          whose loss/change could stop
+                                                                              IAM admin secrets, and DR
+                                           or endanger operations
+                                                                              credentials
+
+
+        3.2 Handling Rules
+         Class                                              Basic Handling Rule
+                                                            Can be shared externally after normal approval.
+         Public
+                                                            Integrity still matters.
+                                                            Staff access only; store on approved PASS
+         Internal
+                                                            systems.
+                                                            Need-to-know access, authenticated storage and
+         Confidential
+                                                            encryption when sent externally.
+                                                            Strong access control, encryption, logging,
+         Restricted
+                                                            limited retention and approved sharing only.
+                                                            Very limited privileged access, MFA,
+         Critical                                           encryption, monitoring, protected backups and
+                                                            recovery copies.
+
+
+
+
+                                                                                                            Page 5 of 11
+<PARSED TEXT FOR PAGE: 7 / 11>
+Information Assurance Assignment
+
+
+
+
+        Both stored data and real-time system data are classified. A public match schedule, for instance, might
+        be freely accessible, but the administrator credentials needed to change the same website are crucial.
+        Since it may feature known individuals and act as proof during a certain incident, the video is limited.
+
+        4. Business Continuity and Disaster Recovery (BC/DR)
+        4.1 Recovery Targets
+        RTO is the longest period of time that PASS will allow a service to be unavailable before it needs to
+        be restored. The most current data that PASS can afford to lose is known as RPO. These goals are
+        derived from Assignment 1's criticality and the impact of an outage during a busy event. They should
+        be put to the test during recovery exercises since they are planned targets.
+         Service              Crit.               RTO                  RPO                  Reason
+                                                                                            Entry queues and
+         Smart Turnstile
+                              5                   15 min               5 min                crowd pressure
+         & Entry System
+                                                                                            can grow quickly.
+                                                                                            Needed to
+         Ticket &                                                                           validate tickets
+         Spectator            5                   30 min               15 min               and restore
+         Database                                                                           account/ticket
+                                                                                            records.
+                                                                                            Many core
+         Internal Stadium                                                                   systems depend
+                              5                   30 min               4 hr config
+         Network                                                                            on internal
+                                                                                            connectivity.
+                                                                                            Staff and
+                                                                                            administrators
+         Employee IAM         5                   30 min               15 min               need
+                                                                                            authentication to
+                                                                                            work.
+                                                                                            Security
+         CCTV & Video                                                                       monitoring is
+                              5                   30 min               5 min
+         Analytics                                                                          important during
+                                                                                            a live event.
+                                                                                            HVAC, lighting
+         Building
+                                                                                            and facility
+         Management           5                   30 min               15 min
+                                                                                            control affect safe
+         System
+                                                                                            operations.
+                                                                                            An outage affects
+                                                                                            sales and ticket
+         Online Ticketing                                                                   retrieval but
+                              4                   1 hr                 15 min
+         Platform                                                                           controlled
+                                                                                            fallback is
+                                                                                            possible.
+                                                                                            Security
+                                                                                            monitoring must
+         SOC / SIEM           4                   1 hr                 15 min               return quickly
+                                                                                            during an
+                                                                                            incident.
+                                                                                            Useful support
+                                                                                            tool, but staff can
+         AI Crowd                                                                           temporarily rely
+                              4                   2 hr                 30 min
+         Prediction                                                                         on direct CCTV
+                                                                                            and manual
+                                                                                            assessment.
+
+
+
+
+                                                                                                             Page 6 of 11
+<PARSED TEXT FOR PAGE: 8 / 11>
+Information Assurance Assignment
+
+
+
+
+         Service               Crit.               RTO                   RPO                 Reason
+                                                                                             Useful spectator
+                                                                                             service but not
+         Public Wi-Fi          3                   8 hr                  N/A
+                                                                                             required for core
+                                                                                             stadium safety.
+
+
+        4.2 Recovery Design
+        The recovery path required for PASS is kept simple:
+            ●    Primary
+            ●    Replication
+            ●    Backup
+            ●    DR Site
+         Layer                                                How PASS Uses It
+                                                              The live stadium systems are in use throughout
+         Primary
+                                                              regular business hours.
+                                                              Replication of the databases and some virtual
+                                                              services in case of failure of the main services
+         Replication
+                                                              has taken place in order to ensure accessibility
+                                                              of the recent data in the backup environment.
+                                                              Data and settings are safeguarded by separate
+                                                              periodic backups. It should be impossible to
+         Backup
+                                                              write at least one recovery copy from regular
+                                                              production accounts.
+                                                              When the primary environment is unavailable,
+         DR Site                                              priority services can be restored in a backup
+                                                              location or cloud recovery environment.
+
+
+        4.3 Recovery Order
+        PASS needs to be careful during a blackout; they shouldn’t restore everything all at once. The first
+        step is restoring the systems that help people get into and move around the building, identify
+        themselves, communicate, and operate the facility. Once these systems are restored, the others will
+        follow.
+        1. Internal network, IAM and core security access.
+        2. Smart turnstiles, ticket database and essential event-control services.
+        3. CCTV, BMS and operational monitoring.
+        4. Online ticketing, POS and other commercial services.
+        5. AI analytics, public Wi-Fi and lower-priority services.
+
+        4.4 Backup and DR Testing
+        Only when PASS is able to recover from a backup is it helpful. There should be a DR test done by IT
+        a minimum of twice a year and monthly sample restores performed. There also needs to be a check of
+        the most recent backup status, emergency accounts, failover contacts, and recovery documentation
+        availability before any major event occurs. Results are documented so that recurring issues may be
+        resolved rather than being found again during an actual occurrence.
+
+
+
+
+                                                                                                                 Page 7 of 11
+<PARSED TEXT FOR PAGE: 9 / 11>
+Information Assurance Assignment
+
+
+
+
+        5. Major Incident Scenario: Ransomware During a Stadium
+        Event
+        5.1 Scenario
+        The simulated incident is based on R11 from Assignment 1, where ransomware was rated Critical. On
+        the morning of a sold-out match, an event coordinator opens a convincing email attachment. The
+        workstation is infected and the attacker uses stolen credentials to move into the internal network.
+        Several office systems and shared files begin to encrypt. The ticketing support service becomes
+        unstable, staff cannot open some operational documents, and unusual authentication activity appears
+        in the SIEM. This means that the turnstiles and the BMS cannot be regarded as part of the office
+        system that has been affected by the malware.
+        The aim here is not only to get rid of malware. PASS should continue to ensure that fans get into the
+        stadium safely, that there is no contamination of evidence and that important systems are restored.
+
+        5.2 Incident Response Flow
+              ●     Preparation
+              ●     Detection
+              ●     Analysis
+              ●     Containment
+              ●     Eradication
+              ●     Recovery
+              ●     Lessons Learned
+
+        5.3 Preparation
+          •       Keep an incident response contact list for SOC, IT, operations, physical security, facilities,
+                  management and key vendors.
+          •       Maintain tested offline/immutable backups for important servers and configurations.
+          •       Send endpoint, IAM, firewall, cloud and server logs to the SIEM.
+          •       Have the emergency procedures in place for validating tickets and gates in case of a failure of
+                  the IT services.
+          •       Train staff on phishing awareness and have MFA in place for remote and privileged access.
+          •       Have an incident evidence folder and document who makes decisions.
+
+        5.4 Detection
+        The SIEM notices abnormal and failed admin logins, users notify files with unusual extensions, and
+        the endpoint shows quick changes to files. All these alarms are reported to the SOC. Rather than
+        dealing with each alarm separately, the monitoring staff correlate all the notifications and generate a
+        single critical incident. Since the incident happened on the day of the incident, Stadium Operations
+        were informed immediately.
+
+        5.5 Analysis
+        Access to OT or safety-related network, the system whose account information was accessed, the user
+        account and device that first logged in, and whether there was a copying of data before encryption is
+        checked for by the response team. Endpoints, IAMs, firewalls, VNPs, servers, and cloud services log
+        data is gathered.
+
+
+
+
+                                                                                                                    Page 8 of 11
+<PARSED TEXT FOR PAGE: 10 / 11>
+Information Assurance Assignment
+
+
+
+
+        5.6 Containment
+        ● Isolate the computer terminals and affected servers from the network to ensure that the issue does
+        not spread further.
+        ● Disable the accounts of those who have been infected, close all their sessions, and change the
+        passwords of elevated accounts that could be affected.
+        ● Block all identified IP addresses, sites, and suspicious activity on your firewall, email filters, and
+        antivirus software.
+        ● Ensure that your physical security system and building management system are disconnected while
+        carrying out the investigation.
+        ● Use your contingency ticket checking system if your primary system gets affected.
+        ● Take forensic images of the infected computers before cleaning and re-imaging them.
+
+        5.7 Eradication
+        IT gets rid of the malware, patches up the security loophole, and installs any necessary updates on the
+        software. Instead of just removing suspicious files, the affected computers are entirely erased and
+        reinstalled using clean system images. Any passwords, security tokens, and API keys used by the
+        compromised accounts are changed. The security team also checks all the systems that haven’t been
+        affected by any problems for the presence of threats.
+
+        5.8 Recovery
+        The restoration of systems follows a recovery priority list as provided for in the business continuity
+        plan. The IT department begins by ensuring that network and identity services have been adequately
+        secured before restoring the ticketing tools and the critical services using backups. Monitoring is done
+        immediately after integration into the network, and full restoration can only occur if security experts
+        declare the environment as being stable and malware-free.
+        In case the initial restoration cannot be done within specified target timelines, operations will be
+        moved to the backup disaster recovery center. Throughout the whole process, recovery teams keep
+        track of total downtime and data losses.
+
+        5.9 Lessons Learned
+        Within a few days, team leads across IT, security, operations, facilities, and management meet to
+        analyze the breach. They evaluate how the phishing email slipped through, how the intruder navigated
+        the network, whether MFA and network isolation held up, and if backups were recovered on schedule.
+        Every fix and improvement identified during the review is assigned directly to a named owner with a
+        firm deadline, ensuring real accountability rather than vague suggestions.
+         Area                                Question                            Follow-up
+                                             Was the attachment detected         Tune filtering/EDR and repeat
+         Email and endpoint controls
+                                             early enough?                       staff awareness where needed.
+                                                                                 Strengthen MFA, disable stale
+                                             Could stolen credentials be
+         Account security                                                        access and review privileged
+                                             used without enough checks?
+                                                                                 roles.
+                                             Did office-system compromise        Fix firewall/VLAN paths found
+         Segmentation
+                                             reach operational networks?         during the incident.
+                                                                                 Adjust backup frequency,
+         Backups                             Did restore meet RTO/RPO?
+                                                                                 copies or recovery procedures.
+                                             Did technical and stadium           Update call tree and event-day
+         Communication
+                                             teams share updates quickly?        incident roles.
+
+
+
+
+                                                                                                                   Page 9 of 11
+<PARSED TEXT FOR PAGE: 11 / 11>
+Information Assurance Assignment
+
+
+
+
+        6. Operational Assurance Checklist
+        The plans above only help if PASS checks that they are actually being followed. A short operational
+        checklist can be reviewed before major events and during the normal assurance cycle.
+         Area                              Check                             Evidence
+                                           Privileged users have MFA and
+         IAM                                                                 IAM report / access review
+                                           separate admin accounts
+                                           Temporary vendor accounts
+         Vendor access                                                       Vendor access register
+                                           have owner and expiry date
+                                           Restricted/Critical data is
+         Data                              stored on approved protected      Data inventory / permissions
+                                           systems
+                                           Latest backup jobs succeeded
+         Backup                            and sample restore has been       Backup report / restore record
+                                           tested
+                                           Recovery contacts and DR
+         DR                                                                  DR checklist / exercise record
+                                           environment are available
+                                           Critical systems are sending
+         Monitoring                                                          SIEM source-health report
+                                           useful logs to SIEM
+                                           Event-day response contacts
+         Incident response                 and fallback procedures are       IR checklist / contact list
+                                           current
+
+
+        7. Summary
+        The previous PASS risk analysis assignment has been incorporated into this current Assignment 3.
+        Due to the reason that access remains open to employees, administrators, and vendors under RBAC,
+        IAM strategy adopts a path Identification, Authentication, Authorization, Least Privilege, and
+        Monitoring. Considering the account compromise was among the major risks in the previous PASS
+        assignment, privileged access, MFA, and periodic review becomes a first priority.
+        In order to ensure the equal protection for all the data with the help of PASS, a data classification
+        process classifies Public, Internal, Confidential, Restricted, and Critical information. For recovery
+        objectives for the services which are important in case of an incident, BC/DR framework follows the
+        recovery path Primary -> Replication -> Backup -> DR site. Lastly, ransomware is an example where
+        PASS's reaction against the readiness, detection, evaluation, containment, elimination, recovery and
+        learning from major incidents comes into action.
+
+
+
+
+                                                                                                            Page 10 of 11

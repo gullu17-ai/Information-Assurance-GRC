@@ -1,0 +1,433 @@
+{
+  "assets": [
+    {
+      "id": "A01",
+      "name": "Smart Turnstile & Entry System",
+      "owner": "Stadium Operations",
+      "type": "OT / Access System",
+      "criticality": 5,
+      "environment": "OT",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A02",
+      "name": "Online Ticketing Platform",
+      "owner": "Commercial / CIO",
+      "type": "Web / Cloud Application",
+      "criticality": 4,
+      "environment": "Public / Cloud",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A03",
+      "name": "Mobile Stadium Application",
+      "owner": "Digital Services",
+      "type": "Mobile Application",
+      "criticality": 3,
+      "environment": "Mobile / Cloud",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A04",
+      "name": "Ticket & Spectator Database",
+      "owner": "Data Owner / CIO",
+      "type": "Data",
+      "criticality": 5,
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A05",
+      "name": "Payment / POS Environment",
+      "owner": "Finance / Commercial",
+      "type": "Payment System",
+      "criticality": 4,
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A06",
+      "name": "CCTV & Video Analytics",
+      "owner": "Head of Physical Security",
+      "type": "Security / IoT",
+      "criticality": 5,
+      "environment": "IoT",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A07",
+      "name": "Building Management System (BMS)",
+      "owner": "Facilities / OT Engineering",
+      "type": "OT / Building System",
+      "criticality": 5,
+      "environment": "OT",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A08",
+      "name": "IoT Crowd & Facility Sensors",
+      "owner": "Facilities / Operations",
+      "type": "IoT",
+      "criticality": 4,
+      "environment": "IoT",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A09",
+      "name": "Internal Stadium Network",
+      "owner": "CIO / Network Team",
+      "type": "Network",
+      "criticality": 5,
+      "environment": "Internal",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A10",
+      "name": "Public Wi-Fi Network",
+      "owner": "CIO / Network Team",
+      "type": "Network",
+      "criticality": 3,
+      "environment": "Public",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A11",
+      "name": "Digital Scoreboard & Signage",
+      "owner": "Event Operations",
+      "type": "AV / IoT",
+      "criticality": 4,
+      "environment": "IoT",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A12",
+      "name": "Cloud Infrastructure",
+      "owner": "CIO",
+      "type": "Cloud",
+      "criticality": 4,
+      "environment": "Cloud",
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A13",
+      "name": "Employee Identity & Access System",
+      "owner": "CISO / IT",
+      "type": "IAM",
+      "criticality": 5,
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A14",
+      "name": "Backup & Recovery Platform",
+      "owner": "CIO / IT",
+      "type": "Infrastructure",
+      "criticality": 5,
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A15",
+      "name": "SOC / SIEM Platform",
+      "owner": "CISO",
+      "type": "Security System",
+      "criticality": 4,
+      "source": "A1 PDF pp. 3, 5–6"
+    },
+    {
+      "id": "A16",
+      "name": "AI Video Analytics & Crowd Prediction System",
+      "owner": "Head of Physical Security / Data Science",
+      "type": "AI",
+      "criticality": 4,
+      "source": "A1 PDF pp. 3, 5–6"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R01",
+      "asset_id": "A02",
+      "scope": null,
+      "event": "DDoS makes ticket sales unavailable",
+      "threat": "DDoS against ticketing",
+      "vulnerability": "Limited traffic filtering or scaling.",
+      "likelihood": 4,
+      "impact": 4,
+      "treatment": "Mitigate",
+      "treatment_action": "DDoS filtering, rate limiting and scalable hosting",
+      "residual_target": 8,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R02",
+      "asset_id": "A01",
+      "scope": null,
+      "event": "Fake/replayed QR tickets allow unauthorized entry",
+      "threat": "Fake or reused digital tickets",
+      "vulnerability": "Weak QR validation, offline gaps or poor anti-replay checks.",
+      "likelihood": 3,
+      "impact": 4,
+      "treatment": "Mitigate",
+      "treatment_action": "Signed QR tickets, online validation and anti-replay checks",
+      "residual_target": 8,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R03",
+      "asset_id": "A05",
+      "scope": null,
+      "event": "POS malware steals payment data",
+      "threat": "Payment malware or POS compromise",
+      "vulnerability": "Outdated terminals, weak segmentation or excessive vendor access.",
+      "likelihood": 3,
+      "impact": 4,
+      "treatment": "Mitigate",
+      "treatment_action": "POS segmentation, patching, endpoint protection and restricted vendor access",
+      "residual_target": 8,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R04",
+      "asset_id": "A09",
+      "scope": null,
+      "event": "Public/guest network access reaches internal systems",
+      "threat": "Unauthorized network access",
+      "vulnerability": "Weak separation between public, staff and operational networks.",
+      "likelihood": 3,
+      "impact": 5,
+      "treatment": "Mitigate",
+      "treatment_action": "Separate guest, staff and OT networks with firewall rules and NAC",
+      "residual_target": 10,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R05",
+      "asset_id": "A06",
+      "scope": null,
+      "event": "Unauthorized access to live or recorded video",
+      "threat": "CCTV account compromise",
+      "vulnerability": "Default credentials, weak MFA, exposed management interface or outdated firmware.",
+      "likelihood": 3,
+      "impact": 4,
+      "treatment": "Mitigate",
+      "treatment_action": "MFA, unique accounts, firmware updates and isolated management access",
+      "residual_target": 8,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R06",
+      "asset_id": "A07",
+      "scope": null,
+      "event": "Attacker changes HVAC/lighting controls during an event",
+      "threat": "BMS manipulation",
+      "vulnerability": "Legacy protocols, remote maintenance access or weak isolation.",
+      "likelihood": 3,
+      "impact": 5,
+      "treatment": "Mitigate",
+      "treatment_action": "OT segmentation, MFA for remote maintenance and allow-listed access",
+      "residual_target": 10,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R07",
+      "asset_id": "A08",
+      "scope": null,
+      "event": "False crowd or facility sensor data is accepted",
+      "threat": "False IoT sensor readings",
+      "vulnerability": "Weak device authentication, insecure firmware or unencrypted traffic.",
+      "likelihood": 3,
+      "impact": 4,
+      "treatment": "Mitigate",
+      "treatment_action": "Device authentication, encrypted traffic and firmware control",
+      "residual_target": 8,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R08",
+      "asset_id": "A11",
+      "scope": null,
+      "event": "Scoreboard/LED displays are taken over",
+      "threat": "Digital signage takeover",
+      "vulnerability": "Shared admin accounts, exposed control panel or weak change control.",
+      "likelihood": 3,
+      "impact": 3,
+      "treatment": "Routine monitoring and access control",
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R09",
+      "asset_id": "A12",
+      "scope": null,
+      "event": "Misconfiguration exposes stored data or services",
+      "threat": "Cloud data exposure",
+      "vulnerability": "Misconfigured storage, excessive permissions or leaked API keys.",
+      "likelihood": 3,
+      "impact": 4,
+      "treatment": "Mitigate",
+      "treatment_action": "Least privilege, configuration reviews and secure key handling",
+      "residual_target": 8,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R10",
+      "asset_id": "A13",
+      "scope": null,
+      "event": "Privileged employee account is compromised",
+      "threat": "Privileged account theft",
+      "vulnerability": "Weak MFA, password reuse, phishing or excessive privileges.",
+      "likelihood": 4,
+      "impact": 5,
+      "treatment": "Mitigate",
+      "treatment_action": "MFA, separate admin accounts, PAM and regular access review",
+      "residual_target": 10,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R11",
+      "asset_id": null,
+      "scope": "Core IT / Operations",
+      "event": "Ransomware interrupts stadium operations",
+      "threat": "Ransomware",
+      "vulnerability": "Unpatched systems, phishing exposure and broad internal access.",
+      "likelihood": 4,
+      "impact": 5,
+      "treatment": "Mitigate",
+      "treatment_action": "EDR, patching, email security, segmentation and tested immutable backups",
+      "residual_target": 10,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R12",
+      "asset_id": "A04",
+      "scope": null,
+      "event": "Personal information is stolen",
+      "threat": "Spectator data breach",
+      "vulnerability": "Application flaws, poor access control or insecure exports.",
+      "likelihood": 4,
+      "impact": 5,
+      "treatment": "Mitigate",
+      "treatment_action": "Database access control, encryption, API security and monitoring",
+      "residual_target": 10,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R13",
+      "asset_id": null,
+      "scope": "Third-Party Services",
+      "event": "Vendor compromise creates a path into stadium systems",
+      "threat": "Third-party compromise",
+      "vulnerability": "Over-privileged vendor accounts or weak supplier security checks.",
+      "likelihood": 3,
+      "impact": 5,
+      "treatment": "Transfer / Mitigate",
+      "treatment_action": "Security clauses, vendor review, limited access, logging and cyber insurance where suitable",
+      "residual_target": 10,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R14",
+      "asset_id": "A14",
+      "scope": null,
+      "event": "Backups are encrypted/deleted with production systems",
+      "threat": "Backup loss during incident",
+      "vulnerability": "Backups reachable from production accounts or no immutable copy.",
+      "likelihood": 3,
+      "impact": 5,
+      "treatment": "Mitigate",
+      "treatment_action": "Immutable/offline backup copies, separate credentials and restore testing",
+      "residual_target": 10,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R15",
+      "asset_id": "A15",
+      "scope": null,
+      "event": "Important attack activity is not logged or alerted",
+      "threat": "Security monitoring failure",
+      "vulnerability": "Missing logs, poor time sync, weak alert coverage or storage exhaustion.",
+      "likelihood": 3,
+      "impact": 4,
+      "treatment": "Mitigate",
+      "treatment_action": "Central logging, alert testing, time synchronization and storage monitoring",
+      "residual_target": 8,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    },
+    {
+      "id": "R16",
+      "asset_id": "A16",
+      "scope": null,
+      "event": "AI crowd-prediction model gives wrong guidance from manipulated or drifted input",
+      "threat": "AI model manipulation",
+      "vulnerability": "Spoofed video, lack of drift monitoring or over-trust in crowd-risk output.",
+      "likelihood": 3,
+      "impact": 4,
+      "treatment": "Mitigate",
+      "treatment_action": "AI inventory, input validation, drift monitoring and human review of safety-related output",
+      "residual_target": 8,
+      "source": "A1 PDF pp. 6–11; A2 PDF pp. 3–5"
+    }
+  ],
+  "governance_roles": [
+    {
+      "role": "Board / Stadium Owners",
+      "responsibility": "Strategy, risk appetite, major investments and policies.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "CEO / General Manager",
+      "responsibility": "Operations, business continuity and major decisions.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "CIO",
+      "responsibility": "Enterprise IT, cloud, applications, networks and planning.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "CISO",
+      "responsibility": "Security policy, risk, monitoring, response and awareness.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "Stadium Operations Director",
+      "responsibility": "Event delivery, control room and coordination.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "Facilities / OT Engineering Manager",
+      "responsibility": "BMS, smart lighting, selected IoT, power and maintenance.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "Head of Physical Security",
+      "responsibility": "CCTV, physical access and emergency security.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "Risk and Compliance Committee",
+      "responsibility": "Major risks, treatments, obligations and exceptions.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "Data Protection / Privacy Officer",
+      "responsibility": "Personal-data handling, privacy and retention.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "Internal Audit",
+      "responsibility": "Independent assurance with senior leadership / Board reporting.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "SOC / Security Team",
+      "responsibility": "Alerts, investigation and response support.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "Business and System Owners",
+      "responsibility": "System accountability and downtime/security needs.",
+      "source": "A1 PDF pp. 4–5"
+    },
+    {
+      "role": "Third-Party Vendors",
+      "responsibility": "Contracted services subject to security, access and reporting requirements.",
+      "source": "A1 PDF pp. 4–5"
+    }
+  ]
+}
